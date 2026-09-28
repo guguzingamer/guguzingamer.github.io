@@ -1,1 +1,1 @@
-All rights reserver
+All rights reserved
