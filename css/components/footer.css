@@ -1,0 +1,10 @@
+footer {
+    display: flex;
+    align-items: center;
+    
+    color: var(--text-neutral, purple);
+
+    > * {
+        margin-left: 20px;
+    }
+}

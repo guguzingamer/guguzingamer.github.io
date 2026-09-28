@@ -1,0 +1,60 @@
+:root[data-theme="dark"] {
+    /* ----- Scroll ----- */
+    --color-scheme: dark;
+    --scroll-bar-color: #9f9f9f;
+    --scroll-back-color: #2c2c2c;
+
+
+    /* ----- Background ----- */
+    --background-standard: #160F08;
+
+    --background-wood: #362011;
+
+    --background-button: #1C130C;
+    --background-button-selected: #8A5827;
+
+    --background-nav-button: #1C130C;
+    --background-nav-button-selected: #8A5827;
+
+    --background-note: #9C6633;
+    --background-note-darker: #6e3819;
+    --background-note-tape: #f1a965;
+
+    --background-group: #13100D;
+
+    --background-highlight: #22180E;
+
+    /* ----- Border ----- */
+    --border-wood: #552C0E;
+
+    --border-button: #54321A;
+    --border-button-selected: #EAA546;
+
+    --border-nav-button: #54321A;
+    --border-nav-button-selected: #EAA546;
+
+    --border-hr: #54321A;
+
+    --border-group: #825325;
+
+    --border-highlight: #4B2E18;
+
+    /* ----- Outline ----- */
+
+    --outline-note: rgba(111, 66, 30, .65);
+
+    /* ----- Text Color ----- */
+    --text-note: #0C0704;
+
+    --text-colored: #C28341;
+    --text-neutral: #f5deb3;
+
+    --text-link: #f7cd15;
+
+    /* ----- Shadow ----- */
+    --wood-shadow: #160B05;
+
+    /* ----- Fonts ----- */
+    --font-standard: "Lora", serif;
+    --font-sign: "Merienda", sans-serif;
+}

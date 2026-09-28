@@ -1,0 +1,77 @@
+:root[data-theme="noir"] {
+    /* ----- Scroll ----- */
+    --color-scheme: dark;
+    --scroll-bar-color: #9f9f9f;
+    --scroll-back-color: #2c2c2c;
+
+
+    /* ----- Background ----- */
+    --background-standard: #191919;
+
+    --background-wood: #1C1C1C;
+
+    --background-button: #222222;
+    --background-button-selected: #5F5F5F;
+
+    --background-nav-button: #1F1F1F;
+    --background-nav-button-selected: #3B3B39;
+
+    --background-note: #222222;
+    --background-note-darker: #0B0D0C;
+    --background-note-tape: #B3B3B3;
+
+    --background-group: #262624;
+
+    --background-highlight: #222423;
+
+    /* ----- Border ----- */
+    --border-wood: #000000;
+
+    --border-button: #0c0c0c;
+    --border-button-selected: #ADADAD;
+
+    --border-nav-button: #373737;
+    --border-nav-button-selected: #ADADAD;
+
+    --border-hr: #373737;
+
+    --border-group: #3d3d3d;
+
+    --border-highlight: #31312F;
+
+    /* ----- Outline ----- */
+
+    --outline-note: rgba(73, 73, 73, 0);
+
+    /* ----- Text Color ----- */
+    --text-note: #E0E0E0;
+
+    --text-high-contrast: #878787;
+    --text-colored: #FFFFFF;
+    --text-neutral: #d4d4d4;
+
+    --text-link: #C9C9C9;
+
+    /* ----- Shadow ----- */
+    --wood-shadow: #131313;
+
+    /* ----- Fonts ----- */
+    --font-standard: "Lora", serif;
+    --font-sign: "Merienda", sans-serif;
+
+    /* ----- New ----- */
+    --border-note: #4C4E4D;
+
+    /* ---------- ADAPTATIONS ---------- */
+
+    .note {
+        border-color: var(--border-note, purple);
+    }
+    header a:hover{
+        font-weight: bold;
+    }
+
+    img, .emoji {
+        filter: grayscale(.75);
+    }
+}

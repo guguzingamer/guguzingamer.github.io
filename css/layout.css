@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    align-items: start;
+
+    grid-template-rows: minmax(0, 1fr) auto;
+    grid-template-areas:
+    "container"
+    "footer";
+}
+
+.container {
+    grid-area: container;
+    display: grid;
+    grid-template-columns: 225px minmax(0, 1fr) 225px;
+    grid-template-areas:
+    "wrapper-header-main main wrapper-aside";
+}
+
+#wrapper-header-main {
+    display: flex;
+    overflow: visible;
+
+    z-index: 100;
+
+    #header-main {
+        min-width: 225px;
+        overflow: auto;
+        contain: size;
+    }
+
+    .button-close {
+        width: 50px;
+        min-width: 50px;
+        height: 50px;
+        position: fixed;
+        left: 225px;
+        display: none;
+    }
+
+    top: 0;
+    min-height: 92vh;
+    max-height: 100vh;
+    position: sticky;
+    grid-area: wrapper-header-main;
+}
+
+#wrapper-aside {
+    display: flex;
+    overflow: visible;
+
+    z-index: 100;
+
+    #aside {
+        min-width: 225px;
+        overflow: auto;
+        contain: size;
+    }
+
+    .button-close {
+        width: 50px;
+        min-width: 50px;
+        height: 50px;
+        position: fixed;
+        right: 225px;
+        display: none;
+    }
+
+    top: 0;
+    min-height: 92vh;
+    max-height: 100vh;
+    position: sticky;
+    grid-area: wrapper-aside;
+}
+
+#header-sub {
+    grid-area: header-sub;
+    display: none;
+}
+
+main {
+    z-index: 2;
+    grid-area: main;
+}
+
+footer {
+    height: 8vh;
+    min-height: 54px;
+    z-index: 3;
+    grid-area: footer;
+}
+
+/* Smartphones (600px para baixo) */
+/* @media only screen and (max-width: 600px) {
+    h1 {
+        background-color: red;
+    }
+} */
+
+/* Dispositivos um pouco maiores, mas ainda pequenos (Pequenos Tablets e Smartphones + largos, 600px para cima) */
+/* @media only screen and (min-width: 600px) {
+    h1 {
+        background-color: orange;
+    }
+} */
+
+/*Dispostivos Médios (Tablets deitados, 768px para cima) */
+/* @media only screen and (min-width: 768px) {
+    h1 {
+        background-color: yellow;
+    }
+} */
+
+/* Dispostivos Largos (laptops/desktops, 992px para cima) */
+/* @media only screen and (min-width: 992px) {
+    h1 {
+        background-color: green;
+    }
+} */
+
+/* Super Largos (Telas maiores laptops, desktops e até TVs, 1200px para cima) */
+/* @media only screen and (min-width: 1200px) {
+    h1 {
+        background-color: blue;
+    }
+} */
+
+@media only screen and (max-width: 768px) {
+    #wrapper-header-main {
+        height: 100vh;
+        position: fixed;
+
+        .button-close {
+            display: block;
+        }
+    }
+
+    #wrapper-aside {
+        height: 100vh;
+        position: fixed;
+        right: 0;
+
+        .button-close {
+            display: block;
+        }
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header-sub"
+            "main";
+    }
+
+    #header-sub {
+        min-height: 10vh;
+        display: flex;
+    }
+
+    main {
+        min-height: 82vh;
+    }
+}

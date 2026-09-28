@@ -1,0 +1,292 @@
+main {
+    input:hover {
+        cursor: pointer;
+    }
+    fieldset {
+        border: none;
+        margin-left: 0 !important;
+    }
+}
+
+.grid fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 18px;
+    width: 100%;
+
+    padding: inherit;
+    margin: inherit;
+
+    label {
+        width: 185px;
+        height: 140px;
+        display:flex;
+        flex-direction: column;
+
+        overflow: hidden;
+
+        .img {
+            width: 100%;
+            height: 75vh;
+            background-color: var(--label-back, purple);
+        }
+
+        .text {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+
+            border-top: 3px solid var(--border-button, purple);
+
+            height: 25vh;
+
+            > * {
+                margin: 0 5px 0 5px;
+            }
+
+            input {
+                appearance: none;
+                width: 16px;
+                height: 16px;
+                border: 2px solid var(--border-button, purple);;
+                border-radius: 50%;
+
+                &:checked {
+                    border-color: var(--border-button-selected, purple);
+
+                    outline: 3px solid var(--border-button-selected, purple);
+                    outline-offset: -50px;
+                }
+            }
+        }
+
+        .st {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 85% 15%;
+            grid-template-areas:
+            "st-header st-main st-aside"
+            "st-footer st-footer st-footer";
+        }
+
+        .st-header {
+            grid-area: st-header;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+
+            background-color: var(--visual-background, purple);
+            border-right: 3px solid var(--visual-border, purple);
+
+            * {
+                border-radius: 2px;
+            }
+
+            .sth-h1 {
+                height: 20px;
+                width: 30px;
+                border: 2px solid var(--visual-border, purple);
+                background-color: var(--visual-background, purple);
+            }
+            .sth-nav1 {
+                height: 10px;
+                width: 30px;
+                border: 2px solid var(--visual-button-current-border, purple);
+                background-color: var(--visual-button-current, purple);
+            }
+            .sth-nav2 {
+                height: 10px;
+                width: 30px;
+                border: 2px solid var(--visual-button-border, purple);
+                background-color: var(--visual-button, purple);
+            }
+            .sth-note {
+                height: 20px;
+                width: 25px;
+                border: 2px solid var(--visual-note-border, purple);
+                background-color: var(--visual-note, purple);
+            }
+        }
+        .st-main {
+            grid-area: st-main;
+
+            background-color: var(--visual-background-sub, purple);
+        }
+        .st-aside {
+            grid-area: st-aside;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            border-left: 3px solid var(--visual-border, purple);
+            background-color: var(--visual-background, purple);
+
+            * {
+                border-radius: 2px;
+            }
+
+            .sta-h2 {
+                margin-top: 2px;
+                height: 10px;
+                width: 30px;
+                border: 2px solid var(--visual-border, purple);
+                background-color: var(--visual-background-wood, purple);
+            }
+            .sta-article1, .sta-article2 {
+                height: 30px;
+                width: 30px;
+                background-color: var(--visual-background-sub, purple);
+                border: 2px solid var(--visual-border-sub, purple);
+            }
+        }
+        .st-footer {
+            grid-area: st-footer;
+            background-color: var(--visual-background-wood, purple);
+            border: 2px solid var(--visual-border, purple);
+        }
+    }
+}
+
+.toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    input {
+        appearance: none;
+        background-color: var(--background-button, purple);
+        position: relative;
+
+        min-width: 50px;
+        width: 50px;
+        height: 26.5px;
+
+        border-radius: 100px;
+        border: 2px solid var(--border-button, purple);
+
+        transition: background-color var(--transition-standard);
+
+        &::before {
+            content: "";
+            background-color: var(--border-button, purple);
+            border-radius: 50%;
+             
+            width: 18px;
+            height: 18px;
+
+            position: absolute;
+            left: 3px;
+
+            top: 50%;
+            transform: translateY(-50%);
+
+            transition: var(--transition-standard);
+        }
+        &:checked {
+            background-color: var(--background-button-selected, purple);
+            border-color: var(--border-button-selected, purple);
+            &::before {
+                background-color: var(--border-button-selected);
+                transform: translate(22px, -50%);
+            }
+        }
+    }
+}
+
+#theme-field {
+    label[for="light"], .sync-light {
+        --label-back: #D8AA78;
+        --visual-border: #A8693C;
+        --visual-border-sub: #965C22;
+
+        --visual-background: #D8AA78;
+        --visual-background-sub: #EED7B7;
+        --visual-background-wood: #CF935F;
+
+        --visual-button: #EABD83;
+        --visual-button-border: #B97A3E;
+        --visual-button-current: #C98A4B;
+        --visual-button-current-border: #603B1F;
+        --visual-note: #E2BF93;
+        --visual-note-border: #A8693C;
+
+        .sth-h1 {
+            background-color: var(--visual-background-wood, purple);
+        }
+    }
+    label[for="dark"], .sync-dark {
+        --label-back: #160F08;
+        --visual-border: #552C0E;
+        --visual-border-sub: #825325;
+
+        --visual-background: #160F08;
+        --visual-background-sub: #13100D;
+        --visual-background-wood: #362011;
+
+        --visual-button: #1C130C;
+        --visual-button-border: #54321A;
+        --visual-button-current: #8A5827;
+        --visual-button-current-border: #EAA546;
+        --visual-note: #9C6633;
+        --visual-note-border: #552C0E;
+    }
+    label[for="vintage"] {
+        --label-back: #553A27;
+        --visual-border: #6B4532;
+        --visual-border-sub: #965C22;
+
+        --visual-background: #553A27;
+        --visual-background-sub: #EAD4B5;
+        --visual-background-wood: #553a27;
+
+        --visual-button: #6B4530;
+        --visual-button-border: #8D6243;
+        --visual-button-current: #92604B;
+        --visual-button-current-border: #C89169;
+        --visual-note: #4A3025;
+        --visual-note-border: #8D6243;
+
+        --visual-vg-h1: linear-gradient(135deg, #70472f, #583522);
+        --visual-vg-h1-border: #a8754d;
+        --visual-vg-aside: #ead4b5;
+        --visual-vg-footer: #2B1D17;
+        --visual-vg-header: linear-gradient(90deg, #3b251b, #4d3022, #3b251b);
+
+        .st-header {
+            background-color: transparent;
+            background-image: var(--visual-vg-header, purple);
+            .sth-h1 {
+                background-color: transparent;
+                background-image: var(--visual-vg-h1, purple);
+                border-color: var(--visual-vg-h1-border, purple);
+            }
+        }
+        .st-aside {
+            background-color: var(--visual-vg-aside, purple);
+        }
+        .st-footer {
+            background-color: var(--visual-vg-footer, purple);
+            border-left: none;
+            border-bottom: none;
+            border-right: none;
+        }
+    }
+    label[for="noir"] {
+        --label-back: #191919;
+        --visual-border: #000000;
+        --visual-border-sub: #3D3D3D;
+
+        --visual-background: #191919;
+        --visual-background-sub: #262624;
+        --visual-background-wood: #1C1C1C;
+
+        --visual-button: #222222;
+        --visual-button-border: #373737;
+        --visual-button-current: #3B3B39;
+        --visual-button-current-border: #ADADAD;
+        --visual-note: #222222;
+        --visual-note-border: #4C4E4D;
+    }
+}

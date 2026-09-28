@@ -1,0 +1,196 @@
+#header-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    z-index: 3;
+
+    background-color: var(--background-standard, purple);
+
+    border-right: 4px solid var(--border-wood, purple);
+}
+
+#header-main nav {
+    margin: 8px 0px 12px 0px;
+    width: 90%;
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        
+        gap: 4px;
+        
+        width: 100%;
+
+        .currentnavbutton {
+            border-color: var(--border-nav-button-selected, purple);
+            background-color: var(--background-nav-button-selected, purple);
+        }
+
+        a {
+            display: flex;
+            padding: 5px;
+            gap: 7.5px;
+
+            align-items: center;
+
+            color: var(--text-colored, purple);
+            text-decoration: none;
+            background-color: var(--background-nav-button, purple);
+            border-radius: 5px;
+            border: 2px solid var(--border-nav-button, purple);
+            border-bottom-width: 4px;
+            transition: transform var(--transition-standard);
+
+            span {
+                color: var(--text-neutral, purple);
+                font-size: 17px;
+                transition: var(--transition-standard);
+            }
+
+            &:hover {
+                transform: translateX(7px);
+
+                span {
+                    color: var(--text-colored, purple);
+                }
+            }
+
+            &:active {
+                transform: scale(.95, .95);
+
+                span {
+                    transform: translateY(3px)
+                }
+            }
+        }
+    }
+}
+
+#h1 {
+    width: 95%;
+
+    img {
+        min-width: 75px !important;
+        transition: transform var(--transition-standard);
+
+        &:hover {
+            transform: rotate(15deg) scale(1.1);
+        }
+    }
+}
+
+#wrapper-header-main .button-close {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    border-left: 0;
+    
+    color: var(--text-neutral, purple);
+
+    &:hover {
+        cursor: pointer;
+        span {
+            transition: var(--transition-standard);
+            color: var(--text-colored, purple);
+        }
+    }
+}
+
+.note {
+    background: radial-gradient(circle at center,
+        var(--background-note, purple) 70%,
+        var(--background-note-darker, purple) 95%,
+        rgba(0,0,0,1) 110%);
+
+    color: var(--text-note, purple);
+    margin: auto 0 12px 0;
+
+    min-height: 140px;
+    max-height: 140px;
+    width: 180px;
+
+    border: 4px solid var(--border-wood, purple);
+    border-radius: 7px;
+
+    outline: 2px dashed var(--outline-note, purple);
+    outline-offset: -9px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+
+    position: relative;
+
+    h2, h3 {
+        font-size: 18px;
+        margin: 10px 0 5px 0;
+        font-weight: 600;
+    }
+
+    hr {
+        border: none;
+        border-top: 2px dashed var(--outline-note, purple);
+        width: 95%;
+    }
+
+    p {
+        margin: 10px 7px 0px 7px;
+    }
+
+    &::before {
+        content: "";
+        background-color: var(--background-note-tape, purple);
+        height: 20px;
+        width: 30px;
+        border-radius: 2px;
+
+        opacity: 50%;
+        position: absolute;
+
+        left: 50%;
+        top: -10px;
+        transform: translateX(-50%);
+    }
+}
+
+.sign {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: var(--font-sign);
+
+    img {
+        image-rendering: pixelated;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    padding: 5px 10px 5px 10px;
+
+    line-height: 40px;
+
+    margin: 10px 0 6px 0;
+    border: 5px solid var(--border-wood, purple);
+    border-radius: 10px;
+
+    background-color: var(--background-standard, purple);
+
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, .45);
+
+    box-shadow:
+        inset 3px 3px 8px rgba(0, 0, 0, .6),
+        inset -3px -3px 8px rgba(0, 0, 0, .6),
+        8px 8px 8px rgba(0, 0, 0, .65);
+}
+
+.welcome {
+    padding: 0 10px 0 10px;
+    margin: 0;
+}

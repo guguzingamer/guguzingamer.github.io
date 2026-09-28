@@ -1,0 +1,11 @@
+:root {
+    --transition-standard: .15s ease;
+    --transition-slow: .3s ease;
+}
+
+:root[data-reduce-motion="true"] {
+    --transition-standard: 0s;
+    --transition-slow: 0s;
+
+    scroll-behavior: auto;
+}

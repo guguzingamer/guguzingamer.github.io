@@ -1,0 +1,110 @@
+main {
+    display: flex;
+    flex-direction: column;
+
+    > * {
+        margin: 10px 15px 10px 15px;
+    }
+
+    h2 {
+        font-size: 27px;
+        color: var(--text-colored, purple);
+    }
+
+    h3, h4 {
+        color: var(--text-colored, purple);
+    }
+
+    hr {
+        border: none;
+        border-bottom: 2px dashed var(--border-hr, purple);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::after {
+            content: "♥";
+            font-size: 40px;
+            color: var(--border-hr, purple);
+
+            text-shadow:
+                3px 3px 0 var(--background-group, purple),
+                -3px 3px 0 var(--background-group, purple),
+                3px -3px 0 var(--background-group, purple),
+                -3px -3px 0 var(--background-group, purple);
+
+            position: absolute;
+        }
+    }
+
+    .ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        li {
+            position: relative;
+
+            display: flex;
+            align-items: center;
+
+            margin-left: 20px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 10px;
+                height: 14px;
+                background-color: var(--text-colored, purple);
+                border-radius: 50%;
+                left: -20px;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 2px;
+                height: 10px;
+                border-left: 1.5px solid var(--background-group, purple);
+                border-radius: 50%;
+                left: -16px;
+                transform: rotate(10deg);
+            }
+        }
+    }
+
+    .highlight {
+        background-color: var(--background-highlight, purple);
+        border: 2px solid var(--border-highlight, purple);
+        border-radius: 3px;
+
+        padding: 15px 0 15px 0;
+
+        > * {
+            margin: 0 10px 0 10px;
+        }
+    }
+
+    .button {
+        border: 3px solid var(--border-button, purple);
+        
+        border-radius: 10px;
+        background-color: var(--background-button, purple);
+
+        overflow: hidden;
+
+        transition: transform var(--transition-standard), box-shadow var(--transition-standard);
+
+        box-shadow: inset 10px 10px 2px rgb(0, 0, 0);
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+            box-shadow: 10px 10px 12px rgba(0, 0, 0, .5);
+        }
+        &:active {
+            transform: scale(1);
+        }
+    }
+}

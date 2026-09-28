@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --coffee-dark: #2b1d17;
+    --coffee: #4a3025;
+    --wood: #6b4532;
+    --cream: #f3e6cf;
+    --paper: #fff8e9;
+    --accent: #d89b5b;
+    --text: #2a211d;
+}
+
+body {
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr) 220px;
+    grid-template-rows: minmax(0, 1fr) 50px;
+
+    background-color: var(--cream);
+    color: var(--text);
+
+    font-family: Georgia, serif;
+}
+
+/* =========================
+   BARRA ESQUERDA
+   ========================= */
+
+header {
+    grid-column: 1;
+    grid-row: 1;
+
+    padding: 25px 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    background-color: var(--coffee-dark);
+    color: var(--cream);
+
+    border-right: 4px solid var(--wood);
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+
+    list-style: none;
+}
+
+.projects a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 120px;
+    padding: 20px;
+
+    color: inherit;
+    text-decoration: none;
+
+    background-color: #cc9678;
+    border: 2px solid #8d6243;
+    border-radius: 8px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.projects a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+header h1 {
+    position: relative;
+}
+
+header h1::before,
+header h1::after {
+    content: "";
+
+    position: absolute;
+    top: 8px;
+
+    width: 7px;
+    height: 7px;
+
+    background: #c49a6c;
+    border: 1px solid #5a3825;
+    border-radius: 50%;
+
+    box-shadow: inset 1px 1px 2px rgba(255,255,255,.3);
+}
+
+header h1::before {
+    left: 8px;
+}
+
+header h1::after {
+    right: 8px;
+}
+
+header {
+    padding: 25px 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #3b251b,
+            #4d3022,
+            #3b251b
+        );
+
+    color: #f3e6cf;
+
+    border-right: 5px solid #241712;
+
+    box-shadow:
+        inset -8px 0 15px rgba(0, 0, 0, 0.25);
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    list-style: none;
+}
+
+header nav a {
+    display: block;
+
+    padding: 10px 14px;
+
+    background: #6b4530;
+    border: 2px solid #8d6243;
+    border-radius: 4px;
+
+    color: #ffe9c7;
+    text-decoration: none;
+    font-weight: bold;
+
+    box-shadow:
+        0 3px 0 #352117;
+
+    transition:
+        transform 0.15s ease,
+        background-color 0.15s ease;
+}
+
+header nav a:hover {
+    background: #805438;
+    transform: translateY(-2px);
+}
+
+header nav a:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 0 #352117;
+}
+
+header nav a:hover {
+    background-color: var(--coffee);
+    transform: translateX(4px);
+}
+
+header h1 {
+    padding: 18px 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #70472f,
+            #583522
+        );
+
+    border: 3px solid #a8754d;
+    border-radius: 6px;
+
+    color: #ffe9c7;
+
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 1.15;
+
+    box-shadow:
+        0 5px 0 #2b1a12,
+        0 8px 12px rgba(0, 0, 0, 0.35);
+
+    text-shadow:
+        2px 2px 0 #342016;
+}
+
+.diary {
+    margin-top: auto;
+
+    padding: 15px;
+
+    background-color: var(--coffee);
+    border: 1px solid var(--wood);
+    border-radius: 6px;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================
+   CONTEÚDO
+   ========================= */
+
+main {
+    grid-column: 2;
+    grid-row: 1;
+
+    padding: 50px;
+
+    background-color: var(--paper);
+
+    line-height: 1.7;
+}
+
+main p {
+    max-width: 700px;
+    font-size: 1.1rem;
+}
+
+
+/* =========================
+   BARRA DIREITA
+   ========================= */
+
+aside {
+    grid-column: 3;
+    grid-row: 1;
+
+    padding: 25px 18px;
+
+    background-color: #ead4b5;
+    border-left: 4px solid var(--wood);
+
+    color: var(--text);
+}
+
+aside h2 {
+    margin-bottom: 15px;
+
+    font-size: 1.2rem;
+}
+
+aside ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    list-style: none;
+}
+
+aside li {
+    padding: 12px;
+
+    background-color: var(--paper);
+    border: 1px solid #d3b993;
+    border-radius: 5px;
+
+    box-shadow: 2px 3px 0 rgba(43, 29, 23, 0.12);
+}
+
+aside h3 {
+    font-size: 0.95rem;
+}
+
+
+/* =========================
+   RODAPÉ
+   ========================= */
+
+footer {
+    grid-column: 1 / -1;
+    grid-row: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--coffee-dark);
+    color: #d8c3aa;
+
+    border-top: 3px solid var(--wood);
+
+    font-size: 0.85rem;
+}

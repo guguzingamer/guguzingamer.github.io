@@ -1,0 +1,170 @@
+:root[data-theme="vintage"] {
+    /* ----- Scroll ----- */
+    --color-scheme: light;
+    --scroll-bar-color: #8b8b8b;
+    --scroll-back-color: rgba(1,1,1,0);
+
+    /* ----- Background ----- */
+    --background-standard: linear-gradient(90deg, #0a0a0a, #131313, #0a0a0a);
+
+    --background-wood: #553a27;
+
+    --background-button: #cc9678;
+    --background-button-selected: #b36a43;
+
+    --background-nav-button: #6b4530;
+    --background-nav-button-selected: #92604b;
+
+    --background-note: #4a3025;
+    --background-note-darker: #4a3025;
+    --background-note-tape: transparent;
+
+    --background-group: #fff8e9;
+
+    --background-highlight: #E5BD8E;
+
+    /* ----- Border ----- */
+    --border-wood: #6b4532;
+
+    --border-button: #8d6243;
+    --border-button-selected: #663a1b;
+
+    --border-nav-button: #8d6243;
+    --border-nav-button-selected: rgb(200, 145, 105);
+
+    --border-hr: #DEB182;
+
+    --border-group: #965c22;
+
+    --border-highlight: hsl(31, 37%, 48%);
+
+    /* ----- Outline ----- */
+
+    --outline-note: transparent;
+
+    /* ----- Text Color ----- */
+    --text-note: #533016;
+
+    --text-high-contrast: #C28341;
+    --text-colored: #2a211d;
+    --text-neutral: #2a211d;
+
+    --text-link: #b63700;
+
+    /* ----- Shadow ----- */
+    --wood-shadow: rgba(22, 11, 5, .25);
+
+    /* ----- Fonts ----- */
+    --font-standard: "Lora", serif;
+    --font-sign: "Merienda", sans-serif;
+
+    /* ----- New ----- */
+
+    --background-header: linear-gradient(90deg, #3b251b, #4d3022, #3b251b);
+    --background-sign: linear-gradient(135deg, #70472f, #583522);
+    --background-aside: #ead4b5;
+    --background-footer: #2b1d17;
+    --background-nav-button-hover: #4a3025;
+    --border-sign: #a8754d;
+    --text-bright: #e6d7af;
+
+
+
+    /* ---------- ADAPTATIONS ---------- */
+
+    body {
+        background-image: var(--background-standard, purple);
+
+        .group {
+            border-radius: 5px;
+            border-width: 1px;
+            box-shadow: none;
+        }
+
+        #wrapper-header-main .board, #wrapper-aside .board {
+            span {color: var(--text-bright, purple) !important;}
+            &:hover span {
+                color: var(--text-high-contrast, purple) !important;
+            }
+        }
+
+        .board {
+            border-color: var(--border-wood, purple);
+            color: var(--text-bright, purple);
+        }
+
+        footer {
+            border-radius: 0;
+            border-right: none;
+            border-left: none;
+            border-bottom: none;
+            background-color: var(--background-footer, purple);
+            border-top-width: 3px;
+        }
+
+        #header-sub {
+            ul li {
+                color: var(--text-bright, purple) !important;
+                
+                span {
+                    color: var(--text-bright, purple) !important;
+                }
+
+                button {
+                    &:hover ~ span {
+                        color: var(--text-high-contrast, purple) !important;
+                    }
+                    &:hover {
+                        span {
+                            color: var(--text-high-contrast, purple) !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        #header-main {
+            background: var(--background-header, purple);
+
+            .sign {
+                background: var(--background-sign, purple);
+                color: var(--text-bright, purple);
+
+                box-shadow:
+                    0 5px 0 #2b1a12,
+                    8px 12px rgba(0, 0, 0, 0.35);
+
+                border-color: var(--border-sign, purple);
+            }
+
+            .note {
+                color: var(--text-bright, purple);
+                outline-style: solid;
+                
+                h2 {
+                    text-decoration: underline;
+                }
+
+                border-width: 2px;
+            }
+
+            nav ul a {
+                &:hover {
+                    background-color: var(--background-nav-button-hover, purple);
+                }
+            }
+            .currentnavbutton {
+                &:hover {
+                    background-color: var(--background-nav-button, purple);
+                }
+            }
+
+            nav span {
+                color: var(--text-bright, purple);
+            }
+        }
+        #aside {
+            background-color: var(--background-aside, purple);
+        }
+    }
+}
