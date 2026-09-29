@@ -139,6 +139,9 @@ footer {
         .button-close {
             display: block;
         }
+        #header-main {
+            height: 100vh;
+        }
     }
 
     #wrapper-aside {
@@ -148,6 +151,9 @@ footer {
 
         .button-close {
             display: block;
+        }
+        #aside {
+            height: 100vh;
         }
     }
 

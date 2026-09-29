@@ -96,8 +96,6 @@ main {
 
         transition: transform var(--transition-standard), box-shadow var(--transition-standard);
 
-        box-shadow: inset 10px 10px 2px rgb(0, 0, 0);
-
         &:hover {
             cursor: pointer;
             transform: scale(1.05);
@@ -105,6 +103,32 @@ main {
         }
         &:active {
             transform: scale(1);
+        }
+    }
+
+    .warn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        background: linear-gradient(135deg, #FDBA13, #FDBA13, #FDBA13);
+        border: 2px solid #0a0a0a;
+        border-radius: 8px;
+
+        color: #0a0a0a;
+        padding: 12px 14px;
+
+        &::before {
+            content: "\26A0";
+        }
+
+        > * {
+            flex: 1;
+            margin: 0;
+        }
+        span {
+            font-weight: bold;
+            color: #221b11;
         }
     }
 }
