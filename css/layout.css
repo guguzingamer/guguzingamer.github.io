@@ -134,6 +134,9 @@ footer {
 @media only screen and (max-width: 768px) {
     #wrapper-header-main {
         height: 100vh;
+        min-height: 100dvh;
+        height: 100dvh;
+        max-height: 100dvh;
         position: fixed;
 
         .button-close {
@@ -141,11 +144,17 @@ footer {
         }
         #header-main {
             height: 100vh;
+            min-height: 100dvh;
+            height: 100dvh;
+            max-height: 100dvh;
         }
     }
 
     #wrapper-aside {
         height: 100vh;
+        min-height: 100dvh;
+        height: 100dvh;
+        max-height: 100dvh;
         position: fixed;
         right: 0;
 
@@ -154,6 +163,9 @@ footer {
         }
         #aside {
             height: 100vh;
+            min-height: 100dvh;
+            height: 100dvh;
+            max-height: 100dvh;
         }
     }
 
