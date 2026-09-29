@@ -133,19 +133,25 @@ footer {
 
 @media only screen and (max-width: 768px) {
     #wrapper-header-main {
-        height: 100vh;
+        min-height: 100vh !important;
+        height: 100vh !important;
+        max-height: 100vh !important;
         position: fixed;
 
         .button-close {
             display: block;
         }
         #header-main {
-            height: 100vh;
+            min-height: 100vh !important;
+            height: 100vh !important;
+            max-height: 100vh !important;
         }
     }
 
     #wrapper-aside {
-        height: 100vh;
+        min-height: 100vh !important;
+        height: 100vh !important;
+        max-height: 100vh !important;
         position: fixed;
         right: 0;
 
@@ -153,7 +159,9 @@ footer {
             display: block;
         }
         #aside {
-            height: 100vh;
+            min-height: 100vh !important;
+            height: 100vh !important;
+            max-height: 100vh !important;
         }
     }
 
