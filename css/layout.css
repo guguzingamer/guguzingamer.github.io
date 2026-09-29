@@ -5,6 +5,7 @@
 }
 
 body {
+    width: 1fr;
     min-height: 100vh;
     display: grid;
     align-items: start;
@@ -170,7 +171,7 @@ footer {
     }
 
     .container {
-        grid-template-columns: 100%;
+        grid-template-columns: 1fr;
         grid-template-areas:
             "header-sub"
             "main";
