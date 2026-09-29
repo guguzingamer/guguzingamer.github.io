@@ -5,6 +5,7 @@
 }
 
 body {
+    max-width: 1fr;
     width: 1fr;
     min-height: 100vh;
     display: grid;
