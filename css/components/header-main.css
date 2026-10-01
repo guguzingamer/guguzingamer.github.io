@@ -3,8 +3,6 @@
     flex-direction: column;
     align-items: center;
 
-    z-index: 3;
-
     background-color: var(--background-standard, purple);
 
     border-right: 4px solid var(--border-wood, purple);
@@ -172,7 +170,7 @@
         font-size: 27px;
     }
 
-    padding: 5px 10px 5px 10px;
+    padding: 0px 10px 0px 10px;
 
     line-height: 40px;
 
@@ -192,5 +190,6 @@
 
 .welcome {
     padding: 0 10px 0 10px;
+    height: 45px;
     margin: 0;
 }

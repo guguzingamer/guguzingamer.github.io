@@ -2,7 +2,7 @@ const message = {
     sunday: "Checkpoint! The start of a new week!",
     monday: "\"I hate Mondays\" ~ a chill cat",
     tuesday: "What do you think? Comfy, right?",
-    wednesday: "I cause chaos. I don't succumb to it.",
+    wednesday: "I prefer spooky.",
     thursday: "Did you know that you are cool?",
     friday: "Absolute Cinema day!",
     saturday: "Let's go gaming! Best day of the week.",

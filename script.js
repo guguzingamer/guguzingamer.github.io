@@ -31,6 +31,7 @@ function loadScripts(src) {
 const scripts = [
 	"theme.js",
 	"components.js",
+    "fa.js",
 
 	"diary-text.js",
 	"header-sub.js",

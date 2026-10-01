@@ -7,4 +7,59 @@ footer {
     > * {
         margin-left: 20px;
     }
+
+    #social-links {
+        display: flex;
+        list-style-type: none;
+        gap: 5px;
+
+        margin-left: auto;
+        margin-right: 20px;
+
+        li, li a {
+            width: 30px;
+            height: 30px;
+        }
+
+        li a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            background-color: var(--background-group, purple);
+            border-radius: 50%;
+            position: relative;
+
+            transition: background-color var(--transition-standard);
+
+            &::before {
+                content: attr(data-name);
+                position: absolute;
+                background-color: var(--social, purple);
+                color: white;
+                padding: 5px;
+                border: 5px;
+                top: -150%;
+                transition: transform var(--transition-standard);
+                transform: scale(0);
+                text-decoration: none;
+                width: max-content;
+                border-radius: 10px;
+            }
+
+            &:hover {
+                background-color: var(--social, purple);
+                &::before {
+                    transform: scale(1);
+                }
+            }
+        }
+
+        li svg {
+            text-align: center;
+            text-anchor: end;
+            font-size: 15px;
+            color: var(--border-button-selected, purple)
+        }
+    }
 }

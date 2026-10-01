@@ -30,8 +30,7 @@ body {
 #wrapper-header-main {
     display: flex;
     overflow: visible;
-
-    z-index: 100;
+    z-index: 3;
 
     #header-main {
         min-width: 225px;
@@ -58,8 +57,7 @@ body {
 #wrapper-aside {
     display: flex;
     overflow: visible;
-
-    z-index: 100;
+    z-index: 3;
 
     #aside {
         min-width: 225px;
@@ -89,14 +87,14 @@ body {
 }
 
 main {
-    z-index: 2;
+    z-index: 1;
     grid-area: main;
 }
 
 footer {
     height: 8vh;
     min-height: 54px;
-    z-index: 3;
+    z-index: 4;
     grid-area: footer;
 }
 
@@ -137,6 +135,7 @@ footer {
 
 @media only screen and (max-width: 768px) {
     #wrapper-header-main {
+        z-index: 5;
         height: 100vh;
         min-height: 100dvh;
         height: 100dvh;
@@ -156,6 +155,7 @@ footer {
     }
 
     #wrapper-aside {
+        z-index: 5;
         height: 100vh;
         min-height: 100dvh;
         height: 100dvh;

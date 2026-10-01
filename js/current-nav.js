@@ -5,6 +5,10 @@ function setCurrentNavButton() {
     var found = false;
 
     links.forEach(link => {
+        if (new URL(link.href).pathname === "/") {
+            return
+        }
+
         const linkPath = new URL(link.href).pathname.replace(".html", "");
         const path = currentPath.replace(".html", "")
 
