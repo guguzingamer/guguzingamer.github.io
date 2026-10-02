@@ -84,17 +84,21 @@ sub {
     opacity: 0;
 }
 
+#wrapper-header-main, #wrapper-aside {
+    transition: transform var(--transition-standard);
+}
+
 /* --------------- @MEDIA --------------- */
 
 @media only screen and (max-width: 768px) {
     #wrapper-header-main {
         transform: translateX(-150%);
-        transition: var(--transition-slow);
+        transition: transform var(--transition-slow);
     }
 
     #wrapper-aside {
         transform: translateX(150%);
-        transition: var(--transition-slow);
+        transition: transform var(--transition-slow);
     }
 
     #wrapper-header-main.active {

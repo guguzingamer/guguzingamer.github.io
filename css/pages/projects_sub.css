@@ -1,29 +1,57 @@
+@media only screen and (max-width: 992px) and (min-width: 769px),
+only screen and (max-width: 600px) {
+    .highlight-project {
+        display: grid !important;
+        grid-template-columns: min-content;
+        grid-template-rows: min-content;
+        grid-template-areas:
+        "pj-img pj-div"
+        "pj-btn pj-btn";
+
+        button {
+            margin-left: 10px !important;
+            margin-top: 10px !important;
+        }
+    }
+}
+
 main {
     .highlight-project {
-        height: 100px;
+        min-height: 100px;
         display: flex;
         gap: 2px;
         align-items: center;
+
         img {
             border-radius: 10px;
             display: block;
             
             height: 100%;
-            width: auto;
+            width: 65px;
+            height: 65px;
             padding: 0;
             margin-right: 0;
+            grid-area: pj-img;
         }
         div {
             display: flex;
             flex-direction: column;
             height: 100%;
             justify-content: start;
+            grid-area: pj-div;
         }
         button {
             padding: 10px;
             margin-left: auto;
             background-color: var(--background-button-selected, purple);
             border-color: var(--border-button-selected, purple);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 15px;
+            grid-area: pj-btn;
+            width: max-content;
+            height: 45px;
         }
     }
 
@@ -33,7 +61,7 @@ main {
             cursor: not-allowed !important;
             box-shadow: none !important;
             transform: scale(1) !important;
-            filter: brightness(.7);
+            filter: brightness(.7) !important;
         }
     }
 
@@ -44,10 +72,12 @@ main {
     }
 }
 
+ 
+
 main #sub {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
     gap: 10px;
 
     nav {
@@ -97,6 +127,7 @@ main #sub {
 
     #sub-extras {
         display: flex;
+        flex-wrap: wrap-reverse;
         gap: 18px;
 
         > * {
