@@ -35,7 +35,7 @@ footer {
             &::before {
                 content: attr(data-name);
                 position: absolute;
-                background-color: var(--social, purple);
+                background-color: var(--social, transparent);
                 color: white;
                 padding: 5px;
                 border: 5px;
@@ -52,6 +52,9 @@ footer {
                 &::before {
                     transform: scale(1);
                 }
+                svg {
+                    color: white;
+                }
             }
         }
 
@@ -59,7 +62,8 @@ footer {
             text-align: center;
             text-anchor: end;
             font-size: 15px;
-            color: var(--border-button-selected, purple)
+            color: var(--border-button-selected, purple);
+            transition: color var(--transition-standard);
         }
     }
 }

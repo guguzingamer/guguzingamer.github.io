@@ -92,8 +92,8 @@ main {
 }
 
 footer {
-    height: 8vh;
-    min-height: 54px;
+    height: auto;
+    min-height: max(54px, 8vh);
     z-index: 4;
     grid-area: footer;
 }

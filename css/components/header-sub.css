@@ -19,10 +19,18 @@
 
             button {
                 order: 2;
+                text-align: end;
+                transform: scaleX(-1);
+                margin-right: 0 !important;
+                margin-left: 5px;
             }
             span {
                 order: 1;
             }
+        }
+
+        .hs-button {
+            gap: 0;
         }
 
         li {
@@ -42,9 +50,9 @@
             button {
                 background-color: transparent;
                 border: none;
-
-                height: 40px;
-                width: 40px;
+                margin-right: 5px;
+                margin-bottom: 5px;
+                height: 24px;
 
                 &:hover ~ span {
                     transition: var(--transition-standard);
