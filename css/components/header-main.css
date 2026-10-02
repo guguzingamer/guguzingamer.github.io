@@ -82,17 +82,24 @@
 #wrapper-header-main .button-close {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-
+    
     border-left: 0;
     
     color: var(--text-neutral, purple);
 
+    span {
+        transform: scaleX(-1);
+        transition: color var(--transition-standard), transform var(--transition-standard);
+    }
+
     &:hover {
         cursor: pointer;
         span {
-            transition: var(--transition-standard);
             color: var(--text-colored, purple);
         }
+    }
+    &:active span {
+        transform: scale(-.8, .8);
     }
 }
 

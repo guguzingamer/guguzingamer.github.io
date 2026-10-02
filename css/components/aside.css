@@ -113,11 +113,17 @@ aside {
 
     color: var(--text-neutral, purple);
 
+    span {
+        transition: color var(--transition-standard), transform var(--transition-standard);
+    }
+
     &:hover {
         cursor: pointer;
         span {
-            transition: var(--transition-standard);
             color: var(--text-colored, purple);
         }
+    }
+    &:active span {
+        transform: scale(.8, .8);
     }
 }

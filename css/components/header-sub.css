@@ -23,6 +23,10 @@
                 transform: scaleX(-1);
                 margin-right: 0 !important;
                 margin-left: 5px;
+
+                &:active {
+                    transform: scale(-.8, .8);
+                }
             }
             span {
                 order: 1;
