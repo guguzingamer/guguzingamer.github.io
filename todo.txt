@@ -1,6 +1,3 @@
-- Finish projects sub (extras)
-- Finish aside properly
-
 - Create fetch for both projects and news
 
 - Customize my social accounts

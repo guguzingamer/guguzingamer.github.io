@@ -31,8 +31,9 @@ function loadScripts(src) {
 const scripts = [
 	"theme.js",
 	"components.js",
-    "fa.js",
+    "fetch-news.js",
 
+    "fa.js",
 	"diary-text.js",
 	"header-sub.js",
 	"current-nav.js",

@@ -19,7 +19,7 @@
         "description"
         "date";
 
-        width: 240px;
+        width: 246px;
 
         > .name, .description, .date {
             margin: 0 10px 0 10px;
