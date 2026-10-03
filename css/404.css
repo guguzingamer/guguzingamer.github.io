@@ -1,0 +1,106 @@
+h1 {
+    font-family: var(--font-sign);
+    font-size: clamp(40px, 8vw, 80px);
+}
+
+#back-div {
+    background: var(--background-standard, purple);
+    box-shadow: inset 0 -1px 500px black;
+    width: 100%;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
+#h-404 {
+    display: flex;
+
+    width: 100%;
+    max-width: 100%;
+
+    justify-content: center;
+
+    h1 {
+        display: block;
+        width: auto;
+        max-width: 100%;
+        text-align: center;
+        overflow-wrap: break-word;
+    }
+
+    img {
+        image-rendering: pixelated;
+        width: clamp(64px, 8vw, 96px);
+        height: clamp(64px, 8vw, 96px);
+        vertical-align: middle;
+    }
+}
+
+#main-div {
+    width: min(90%, 700px);
+    height: min-content;
+
+    display: grid;
+    grid-template-areas:
+    "t404 text"
+    "back back";
+
+    align-items: center;
+    justify-content: center;
+
+    #t404 {
+        color: var(--text-colored, purple);
+        font-size: clamp(60px, 15vw, 125px);
+        grid-area: t404;
+    }
+    div {
+        grid-area: text;
+        margin-left: 20px;
+
+        span {
+            font-size: clamp(20px, 8vw, 40px);
+        }
+        p {
+            font-size: clamp(10px, 8vw, 13px);
+        }
+    }
+    a {
+        grid-area: back;
+        margin-top: 20px;
+        padding: 10px;
+        width: max-content;
+        min-height: 45px;
+        height: 45px;
+
+        justify-self: center;
+
+        transform: scale(1.5);
+
+        margin-bottom: 20px;
+
+        border: 3px solid var(--border-button-selected, purple);
+        
+        border-radius: 10px;
+        background-color: var(--background-button-selected, purple);
+
+        color: var(--text-neutral, purple);
+        text-decoration: none;
+
+        overflow: hidden;
+
+        transition: transform var(--transition-standard), box-shadow var(--transition-standard), filter var(--transition-standard);
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.6);
+            box-shadow: 10px 10px 12px rgba(0, 0, 0, .5);
+            filter: brightness(1.15);
+        }
+        &:active {
+            transform: scale(1.5);
+        }
+    }
+}
