@@ -1,0 +1,16 @@
+{
+    "projects_list": {
+        "public": [
+            "simply-alive",
+            "simply-alive-x-fresh-animations",
+            "guguzin-gamers-cafe"
+        ],
+        "unreleased": [
+            "color-world",
+            "origins-mythicals"
+        ],
+        "archived": [
+            "kat-meow-1-demo"
+        ]
+    }
+}

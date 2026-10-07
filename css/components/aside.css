@@ -46,6 +46,8 @@ aside {
 
         width: 196px;
 
+        transition: filter var(--transition-standard);
+
         > .name, .summary, .date {
             margin: 0 10px 0 10px;
         }
@@ -88,6 +90,7 @@ aside {
                 text-decoration: underline;
                 text-decoration-thickness: 2px;
             }
+            filter: brightness(1.15);
         }
     }
 

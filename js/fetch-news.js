@@ -1,16 +1,30 @@
-const news = [
-    "guguzin-cafe-launch.html",
-];
+async function getLatestArticles() {
+    const response = await fetch("/data/news.json");
 
-function createText(type, id, el) {
+    if (!response.ok) {
+        throw new Error("Data news.json wasn't able to be loaded!");
+    }
+
+    const data = await response.json();
+
+    var newArray = []
+    for (let index = 0; index < 3; index++) {
+        if (!data.news_list[index]) {continue}
+
+        newArray[index] = data.news_list[index]
+    }
+    return newArray
+}
+
+function createAsideText(type, id, el) {
     var returned = document.createElement(type)
     returned.classList.add(id)
     returned.innerHTML = el.innerHTML
     return returned
 }
 
-async function loadArticle(src, asideUl) {
-    const response = await fetch(src);
+async function loadArticleToAside(src, asideUl) {
+    const response = await fetch(src+".html");
 
     if (!response.ok) {
         throw new Error("Article ${src} wasn't able to be loaded!");
@@ -34,11 +48,11 @@ async function loadArticle(src, asideUl) {
         newImg.src = banner.src
         newImg.alt = "banner"
 
-    const newH3 = createText("h3", "name", name)
+    const newH3 = createAsideText("h3", "name", name)
     newH3.title = newH3.innerHTML
 
-    const newP = createText("p", "summary", summary)
-    const newSmall = createText("small", "date", date)
+    const newP = createAsideText("p", "summary", summary)
+    const newSmall = createAsideText("small", "date", date)
 
     newA.classList.add("group")
     newA.href = src
@@ -52,9 +66,11 @@ async function loadArticle(src, asideUl) {
     newLi.append(newA)
 }
 
-componentsReady.then(() => {
+componentsReady.then(async () => {
     const asideUl = document.querySelector("aside ul")
-    news.forEach(article => {
-        loadArticle("/pages/news/" + article, asideUl);
+    const latestNews = await getLatestArticles()
+
+    latestNews.forEach(article => {
+        loadArticleToAside("/pages/news/" + article, asideUl);
     });
 });

@@ -21,7 +21,7 @@
 
         width: 246px;
 
-        > .name, .description, .date {
+        > .name, .summary, .date {
             margin: 0 10px 0 10px;
         }
 
@@ -42,7 +42,7 @@
             white-space: nowrap;
             text-overflow: ellipsis;
         }
-        .description {
+        .summary {
             grid-area: description;
             display: -webkit-box;
             -webkit-line-clamp: 3;

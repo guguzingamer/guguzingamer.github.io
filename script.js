@@ -40,7 +40,9 @@ const scripts = [
 	"sounds.js",
 	"reduce-motion.js",
     "loading-bar.js",
-	"tooltip.js"
+	"tooltip.js",
+
+    "test.js"
 ];
 
 scripts.forEach(archive => {

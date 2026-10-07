@@ -23,7 +23,7 @@ main {
         align-items: center;
 
         img {
-            border-radius: 10px;
+            border-radius: 5px;
             display: block;
             
             height: 100%;
@@ -50,6 +50,7 @@ main {
             gap: 5px;
             font-size: 15px;
             grid-area: pj-btn;
+            min-width: 137px;
             width: max-content;
             height: 45px;
         }
@@ -138,22 +139,25 @@ main #sub {
             list-style-type: none;
         }
 
-        #badges {
+        #badges-container {
             width: 135px;
         }
 
-        .badges  {
-            width: 100%;
+        #badges  {
+            width: 115px;
             list-style-type: none;
 
             justify-content: start;
             display: flex;
             margin-top: 2px;
 
+            flex-wrap: wrap;
+            gap: 5px;
+
             li {
+                display: inline-block;
                 background-color: var(--background-button, purple);
-                min-width: min-content;
-                width: auto;
+                
                 padding: 2px;
                 border: 2px solid var(--border-button, purple);
                 border-radius: 5px;

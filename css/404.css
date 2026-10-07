@@ -4,7 +4,7 @@ h1 {
 }
 
 body {
-    height: 100dvh;
+    max-height: 100dvh;
 }
 
 #back-div {

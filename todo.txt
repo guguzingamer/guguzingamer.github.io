@@ -1,4 +1,4 @@
-- Create fetch for both projects and news
+- Create fetch for projects
 
 - Customize my social accounts
 
