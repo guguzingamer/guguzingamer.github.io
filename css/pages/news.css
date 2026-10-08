@@ -1,3 +1,27 @@
+@media only screen and (max-width: 992px) and (min-width: 769px),
+only screen and (max-width: 600px) {
+    .featured a {
+        grid-template-columns: 100% !important;
+        grid-template-rows: auto auto auto !important;
+        grid-template-areas:
+        "banner"
+        "content"
+        "date" !important;
+        gap: 10px !important;
+
+        .banner {
+            margin: 20px 20px 0 20px !important;
+            width: calc(100% - 40px) !important;
+        }
+        div {
+            margin: 0 20px 0 20px !important;
+        }
+        .date {
+            margin: 0 20px 20px 20px !important;
+        }
+    }
+}
+
 #news-container {
     display: flex;
     flex-wrap: wrap;
@@ -11,15 +35,18 @@
         justify-content: center;
 
         a {
-            width: calc(95% - 26px);
-            padding: 0 15px 0 15px;
+            min-height: 225px;
+            height: fit-content;
+            width: 92.5%;
             grid-template-rows: min-content auto;
-            grid-template-columns: 50% 50%;
+            grid-template-columns: 45% 45%;
             grid-template-areas:
             "banner content"
             "banner date";
             align-items: center;
             justify-content: center;
+
+            gap: 20px;
 
             .banner {
                 border: none;
@@ -30,22 +57,30 @@
                 grid-area: content;
                 display: flex;
                 flex-direction: column;
+                margin-top: 20px;
+            }
+            .featured-text {
+                color: var(--text-colored, purple);
+                font-weight: bold;
+                font-style: italic;
             }
             > .name, .summary, .date {
                 width: 100%;
                 text-wrap: wrap;
+                margin: 0;
             }
             .name {
                 font-size: 25px;
-                margin-top: 15px;
                 align-self: flex-start;
+                width: 100%;
+                text-wrap: wrap;
             }
             .summary {
                 align-items: start;
             }
             .date {
                 align-self: flex-end;
-                margin-bottom: 15px;
+                margin-bottom: 20px;
             }
         }
     }

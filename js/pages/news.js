@@ -5,11 +5,18 @@ function createNewsText(type, id, el) {
     return returned
 }
 
-function createWrapper(el) {
+function adaptFeatured(el) {
+    el.classList.add("highlight", "featured")
+
+    const newP = document.createElement("p")
+    newP.innerText = "Featured Article"
+    newP.classList.add("featured-text")
+
     const wrapper = document.createElement("div")
     const contentName = el.querySelector(".name")
     const contentSummary = el.querySelector(".summary")
 
+    wrapper.append(newP)
     wrapper.append(contentName)
     wrapper.append(contentSummary)
 
@@ -78,8 +85,7 @@ const newsList = fetch("/data/news.json")
 
             if (first == true) {
                 const featured = await loadNewsPage(`/pages/news/${article}.html`, newsContainer)
-                featured.classList.add("highlight", "featured")
-                createWrapper(featured)
+                adaptFeatured(featured)
             }
             else {
                 await loadNewsPage(`/pages/news/${article}.html`, newsContainer);

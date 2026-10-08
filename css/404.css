@@ -5,15 +5,14 @@ h1 {
 
 body {
     display: flex !important;
-    height: 100dvh !important;
-    max-height: 100dvh !important;
+    min-height: 100dvh !important;
 }
 
 #back-div {
     background: var(--background-standard, purple);
     box-shadow: inset 0 -1px 500px black;
     width: 100%;
-    min-height: 100dvh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
