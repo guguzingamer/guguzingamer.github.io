@@ -18,7 +18,7 @@ function playSound(audio) {
     }
 
     audio.playbackRate = random(4, 5)
-    audio.volume = .35
+    audio.volume = 1
     audio.currentTime = 0
     audio.play().catch(() => {})
 }

@@ -5,6 +5,18 @@ function createNewsText(type, id, el) {
     return returned
 }
 
+function createWrapper(el) {
+    const wrapper = document.createElement("div")
+    const contentName = el.querySelector(".name")
+    const contentSummary = el.querySelector(".summary")
+
+    wrapper.append(contentName)
+    wrapper.append(contentSummary)
+
+    const a = el.querySelector("a")
+    a.append(wrapper)
+}
+
 async function loadNewsPage(src, newsContainer) {
     const response = await fetch(src);
 
@@ -36,8 +48,7 @@ async function loadNewsPage(src, newsContainer) {
     const newP = createNewsText("p", "summary", summary)
     const newSmall = createNewsText("small", "date", date)
 
-    newA.classList.add("button")
-    newA.classList.add("hover")
+    newA.classList.add("button", "hover")
     newA.href = src
 
     newA.append(newImg)
@@ -51,6 +62,8 @@ async function loadNewsPage(src, newsContainer) {
     newA.addEventListener("mouseenter", () => {
         playSound(hoverSound);
     });
+
+    return newLi
 }
 
 const newsContainer = document.querySelector("#news-container")
@@ -59,6 +72,19 @@ const newsList = fetch("/data/news.json")
     .then(response  => response.json())
     .then(async list => {
         for (const article of list.news_list) {
-            await loadNewsPage(`/pages/news/${article}.html`, newsContainer);
+            if (first == null) {
+                var first = true
+            }
+
+            if (first == true) {
+                const featured = await loadNewsPage(`/pages/news/${article}.html`, newsContainer)
+                featured.classList.add("highlight", "featured")
+                createWrapper(featured)
+            }
+            else {
+                await loadNewsPage(`/pages/news/${article}.html`, newsContainer);
+            }
+
+            first = false
         }
     })

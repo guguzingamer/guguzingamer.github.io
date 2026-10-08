@@ -70,7 +70,7 @@ componentsReady.then(async () => {
     const asideUl = document.querySelector("aside ul")
     const latestNews = await getLatestArticles()
 
-    latestNews.forEach(article => {
-        loadArticleToAside("/pages/news/" + article, asideUl);
-    });
+    for (const article of latestNews) {
+        await loadArticleToAside("/pages/news/" + article, asideUl);
+    }
 });

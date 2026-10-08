@@ -42,8 +42,7 @@ async function createProjectA(src, sectionUl) {
     nBadges.classList.add("badges")
     nBadges.id = ""
 
-    nA.classList.add("button")
-    nA.classList.add("hover")
+    nA.classList.add("button", "hover")
     nA.href = src
 
     nA.append(nIcon)

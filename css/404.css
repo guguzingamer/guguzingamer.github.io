@@ -4,7 +4,9 @@ h1 {
 }
 
 body {
-    max-height: 100dvh;
+    display: flex !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
 }
 
 #back-div {

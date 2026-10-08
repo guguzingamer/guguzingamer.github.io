@@ -5,6 +5,51 @@
     gap: 20px;
     list-style-type: none;
 
+    .featured {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        a {
+            width: calc(95% - 26px);
+            padding: 0 15px 0 15px;
+            grid-template-rows: min-content auto;
+            grid-template-columns: 50% 50%;
+            grid-template-areas:
+            "banner content"
+            "banner date";
+            align-items: center;
+            justify-content: center;
+
+            .banner {
+                border: none;
+                height: auto !important;
+                border-radius: 10px;
+            }
+            div {
+                grid-area: content;
+                display: flex;
+                flex-direction: column;
+            }
+            > .name, .summary, .date {
+                width: 100%;
+                text-wrap: wrap;
+            }
+            .name {
+                font-size: 25px;
+                margin-top: 15px;
+                align-self: flex-start;
+            }
+            .summary {
+                align-items: start;
+            }
+            .date {
+                align-self: flex-end;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
     a {
         text-decoration: none;
         display: grid;
