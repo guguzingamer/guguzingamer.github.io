@@ -48,8 +48,8 @@ body {
     }
 
     top: 0;
-    min-height: 92vh;
-    max-height: 100vh;
+    min-height: 92dvh;
+    max-height: 100dvh;
     position: sticky;
     grid-area: wrapper-header-main;
 }
@@ -75,8 +75,8 @@ body {
     }
 
     top: 0;
-    min-height: 92vh;
-    max-height: 100vh;
+    min-height: 92dvh;
+    max-height: 100dvh;
     position: sticky;
     grid-area: wrapper-aside;
 }
@@ -93,7 +93,7 @@ main {
 
 footer {
     height: auto;
-    min-height: max(54px, 8vh);
+    min-height: max(54px, 8dvh);
     z-index: 4;
     grid-area: footer;
 }
@@ -136,7 +136,7 @@ footer {
 @media only screen and (max-width: 768px) {
     #wrapper-header-main {
         z-index: 5;
-        height: 100vh;
+        height: 100dvh;
         min-height: 100dvh;
         height: 100dvh;
         max-height: 100dvh;
@@ -147,7 +147,7 @@ footer {
             display: block;
         }
         #header-main {
-            height: 100vh;
+            height: 100dvh;
             min-height: 100dvh;
             height: 100dvh;
             max-height: 100dvh;
@@ -156,7 +156,7 @@ footer {
 
     #wrapper-aside {
         z-index: 5;
-        height: 100vh;
+        height: 100dvh;
         min-height: 100dvh;
         height: 100dvh;
         max-height: 100dvh;
@@ -168,7 +168,7 @@ footer {
             display: block;
         }
         #aside {
-            height: 100vh;
+            height: 100dvh;
             min-height: 100dvh;
             height: 100dvh;
             max-height: 100dvh;
@@ -183,11 +183,11 @@ footer {
     }
 
     #header-sub {
-        min-height: 10vh;
+        min-height: 10dvh;
         display: flex;
     }
 
     main {
-        min-height: 82vh;
+        min-height: 82dvh;
     }
 }

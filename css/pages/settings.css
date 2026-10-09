@@ -28,7 +28,7 @@ main {
 
         .img {
             width: 100%;
-            height: 75vh;
+            height: 75dvh;
             background-color: var(--label-back, purple);
         }
 
@@ -39,7 +39,7 @@ main {
 
             border-top: 3px solid var(--border-button, purple);
 
-            height: 25vh;
+            height: 25dvh;
 
             > * {
                 margin: 0 5px 0 5px;
