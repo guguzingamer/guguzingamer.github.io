@@ -1,4 +1,4 @@
-const scripts = [
+var scripts = [
 	"theme.js",
 	"components.js",
     "fetch-news.js",
@@ -13,6 +13,17 @@ const scripts = [
 
     "test.js"
 ];
+
+customScripts = document.querySelectorAll("custom-script")
+console.log(customScripts)
+
+customScripts.forEach(el => {
+    const source = el.getAttribute("src")
+    const nSource = source.replace("/js/", "")
+
+    scripts.splice(3, 0, nSource)
+})
+
 
 // Loading Bar - start
 
@@ -54,7 +65,7 @@ function loadScripts(src) {
         console.error(`Failed to load: ${src}`);
     };
 
-    console.log(loadedScripts)
+    // console.log(`Script ${src} finished loading! Number: ${loadedScripts}`)
     document.head.appendChild(script);
 };
 
