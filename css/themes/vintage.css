@@ -73,7 +73,7 @@
     /* ---------- ADAPTATIONS ---------- */
 
     body {
-        background-image: var(--background-standard, purple);
+        background-image: var(--background-standard);
 
         .group {
             border-radius: 5px;
@@ -82,15 +82,15 @@
         }
 
         #wrapper-header-main .board, #wrapper-aside .board {
-            span {color: var(--text-bright, purple) !important;}
+            span {color: var(--text-bright) !important;}
             &:hover span {
-                color: var(--text-high-contrast, purple) !important;
+                color: var(--text-high-contrast) !important;
             }
         }
 
         .board {
-            border-color: var(--border-wood, purple);
-            color: var(--text-bright, purple);
+            border-color: var(--border-wood);
+            color: var(--text-bright);
         }
 
         footer {
@@ -98,25 +98,25 @@
             border-right: none;
             border-left: none;
             border-bottom: none;
-            background-color: var(--background-footer, purple);
+            background-color: var(--background-footer);
             border-top-width: 3px;
         }
 
         #header-sub {
             ul li {
-                color: var(--text-bright, purple) !important;
+                color: var(--text-bright) !important;
                 
                 span {
-                    color: var(--text-bright, purple) !important;
+                    color: var(--text-bright) !important;
                 }
 
                 button {
                     &:hover ~ span {
-                        color: var(--text-high-contrast, purple) !important;
+                        color: var(--text-high-contrast) !important;
                     }
                     &:hover {
                         span {
-                            color: var(--text-high-contrast, purple) !important;
+                            color: var(--text-high-contrast) !important;
                         }
                     }
                 }
@@ -124,21 +124,21 @@
         }
 
         #header-main {
-            background: var(--background-header, purple);
+            background: var(--background-header);
 
             .sign {
-                background: var(--background-sign, purple);
-                color: var(--text-bright, purple);
+                background: var(--background-sign);
+                color: var(--text-bright);
 
                 box-shadow:
                     0 5px 0 #2b1a12,
                     8px 12px rgba(0, 0, 0, 0.35);
 
-                border-color: var(--border-sign, purple);
+                border-color: var(--border-sign);
             }
 
             .note {
-                color: var(--text-bright, purple);
+                color: var(--text-bright);
                 outline-style: solid;
                 
                 h2 {
@@ -150,21 +150,21 @@
 
             nav ul a {
                 &:hover {
-                    background-color: var(--background-nav-button-hover, purple);
+                    background-color: var(--background-nav-button-hover);
                 }
             }
             .currentnavbutton {
                 &:hover {
-                    background-color: var(--background-nav-button, purple);
+                    background-color: var(--background-nav-button);
                 }
             }
 
             nav span {
-                color: var(--text-bright, purple);
+                color: var(--text-bright);
             }
         }
         #aside {
-            background-color: var(--background-aside, purple);
+            background-color: var(--background-aside);
         }
     }
 }

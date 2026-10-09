@@ -1,7 +1,36 @@
+const scripts = [
+	"theme.js",
+	"components.js",
+    "fetch-news.js",
+
+    "fa.js",
+	"diary-text.js",
+	"header-sub.js",
+	"current-nav.js",
+	"sounds.js",
+	"reduce-motion.js",
+	"tooltip.js",
+
+    "test.js"
+];
+
+// Loading Bar - start
+
+const loadingBar = document.createElement("progress")
+loadingBar.max = scripts.length
+loadingBar.value = 0
+loadingBar.classList.add("loading-bar")
+
+document.body.append(loadingBar)
+
 let loadedScripts = 0;
+
+// Loading Bar - end
 
 const scriptsReady = new Promise(resolve => {
     window.finishScripts = () => {
+        loadingBar.classList.add("is-complete");
+        console.log("All scripts loaded!")
         resolve();
     };
 });
@@ -14,10 +43,10 @@ function loadScripts(src) {
 
     script.onload = () => {
         loadedScripts++;
+        loadingBar.value = loadedScripts
 
         if (loadedScripts === scripts.length) {
             finishScripts();
-            console.log("All scripts were loaded!");
         }
     };
 
@@ -25,25 +54,9 @@ function loadScripts(src) {
         console.error(`Failed to load: ${src}`);
     };
 
+    console.log(loadedScripts)
     document.head.appendChild(script);
 };
-
-const scripts = [
-	"theme.js",
-	"components.js",
-    "fetch-news.js",
-
-    "fa.js",
-	"diary-text.js",
-	"header-sub.js",
-	"current-nav.js",
-	"sounds.js",
-	"reduce-motion.js",
-    "loading-bar.js",
-	"tooltip.js",
-
-    "test.js"
-];
 
 scripts.forEach(archive => {
     loadScripts("/js/"+archive)

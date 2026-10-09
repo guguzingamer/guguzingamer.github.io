@@ -1,7 +1,7 @@
 /* --------------- CLASSES --------------- */
 
 html, * {
-    color-scheme: var(--color-scheme, purple);
+    color-scheme: var(--color-scheme);
     scroll-behavior: smooth;
     scrollbar-width: thin;
 }
@@ -9,27 +9,27 @@ html, * {
 body {
     font-family: var(--font-standard);
 
-    background-color: var(--background-standard, purple);
-    color: var(--text-colored, purple);
+    background-color: var(--background-standard);
+    color: var(--text-colored);
 }
 
 .link {
-    color: var(--text-link, purple);
+    color: var(--text-link);
     text-decoration: none;
     transition: color var(--transition-slow);
 
     &:hover {
         text-decoration: underline;
-        color: color-mix(in srgb, var(--text-link, purple) 60%, white)
+        color: color-mix(in srgb, var(--text-link) 60%, white)
     }
 }
 
 .group {
-    background-color: var(--background-group, purple);
-    border: 2px solid var(--border-group, purple);
+    background-color: var(--background-group);
+    border: 2px solid var(--border-group);
     border-radius: 10px;
 
-    color: var(--text-neutral, purple);
+    color: var(--text-neutral);
 
     padding: 15px;
 
@@ -39,16 +39,16 @@ body {
 }
 
 .board {
-    background-color: var(--background-wood, purple);
-    border: 5px solid var(--border-wood, purple);
+    background-color: var(--background-wood);
+    border: 5px solid var(--border-wood);
 
     border-radius: 7px;
 
-    color: var(--text-colored, purple);
+    color: var(--text-colored);
 
     box-shadow:
-        inset 1px 1px 2px 2px var(--wood-shadow, purple),
-        inset -1px -1px 2px 2px var(--wood-shadow, purple),
+        inset 1px 1px 2px 2px var(--wood-shadow),
+        inset -1px -1px 2px 2px var(--wood-shadow),
         3px 3px 6px rgba(0, 0, 0, 0.45);
 }
 

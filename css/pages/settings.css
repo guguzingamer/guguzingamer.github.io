@@ -29,7 +29,7 @@ main {
         .img {
             width: 100%;
             height: 75dvh;
-            background-color: var(--label-back, purple);
+            background-color: var(--label-back);
         }
 
         .text {
@@ -37,7 +37,7 @@ main {
             justify-content: start;
             align-items: center;
 
-            border-top: 3px solid var(--border-button, purple);
+            border-top: 3px solid var(--border-button);
 
             height: 25dvh;
 
@@ -49,13 +49,13 @@ main {
                 appearance: none;
                 width: 16px;
                 height: 16px;
-                border: 2px solid var(--border-button, purple);;
+                border: 2px solid var(--border-button);;
                 border-radius: 50%;
 
                 &:checked {
-                    border-color: var(--border-button-selected, purple);
+                    border-color: var(--border-button-selected);
 
-                    outline: 3px solid var(--border-button-selected, purple);
+                    outline: 3px solid var(--border-button-selected);
                     outline-offset: -50px;
                 }
             }
@@ -77,8 +77,8 @@ main {
             align-items: center;
             justify-content: space-around;
 
-            background-color: var(--visual-background, purple);
-            border-right: 3px solid var(--visual-border, purple);
+            background-color: var(--visual-background);
+            border-right: 3px solid var(--visual-border);
 
             * {
                 border-radius: 2px;
@@ -87,32 +87,32 @@ main {
             .sth-h1 {
                 height: 20px;
                 width: 30px;
-                border: 2px solid var(--visual-border, purple);
-                background-color: var(--visual-background, purple);
+                border: 2px solid var(--visual-border);
+                background-color: var(--visual-background);
             }
             .sth-nav1 {
                 height: 10px;
                 width: 30px;
-                border: 2px solid var(--visual-button-current-border, purple);
-                background-color: var(--visual-button-current, purple);
+                border: 2px solid var(--visual-button-current-border);
+                background-color: var(--visual-button-current);
             }
             .sth-nav2 {
                 height: 10px;
                 width: 30px;
-                border: 2px solid var(--visual-button-border, purple);
-                background-color: var(--visual-button, purple);
+                border: 2px solid var(--visual-button-border);
+                background-color: var(--visual-button);
             }
             .sth-note {
                 height: 20px;
                 width: 25px;
-                border: 2px solid var(--visual-note-border, purple);
-                background-color: var(--visual-note, purple);
+                border: 2px solid var(--visual-note-border);
+                background-color: var(--visual-note);
             }
         }
         .st-main {
             grid-area: st-main;
 
-            background-color: var(--visual-background-sub, purple);
+            background-color: var(--visual-background-sub);
         }
         .st-aside {
             grid-area: st-aside;
@@ -120,8 +120,8 @@ main {
             flex-direction: column;
             align-items: center;
             gap: 4px;
-            border-left: 3px solid var(--visual-border, purple);
-            background-color: var(--visual-background, purple);
+            border-left: 3px solid var(--visual-border);
+            background-color: var(--visual-background);
 
             * {
                 border-radius: 2px;
@@ -131,20 +131,20 @@ main {
                 margin-top: 2px;
                 height: 10px;
                 width: 30px;
-                border: 2px solid var(--visual-border, purple);
-                background-color: var(--visual-background-wood, purple);
+                border: 2px solid var(--visual-border);
+                background-color: var(--visual-background-wood);
             }
             .sta-article1, .sta-article2 {
                 height: 30px;
                 width: 30px;
-                background-color: var(--visual-background-sub, purple);
-                border: 2px solid var(--visual-border-sub, purple);
+                background-color: var(--visual-background-sub);
+                border: 2px solid var(--visual-border-sub);
             }
         }
         .st-footer {
             grid-area: st-footer;
-            background-color: var(--visual-background-wood, purple);
-            border: 2px solid var(--visual-border, purple);
+            background-color: var(--visual-background-wood);
+            border: 2px solid var(--visual-border);
         }
     }
 }
@@ -156,7 +156,7 @@ main {
 
     input {
         appearance: none;
-        background-color: var(--background-button, purple);
+        background-color: var(--background-button);
         position: relative;
 
         min-width: 50px;
@@ -164,13 +164,13 @@ main {
         height: 26.5px;
 
         border-radius: 100px;
-        border: 2px solid var(--border-button, purple);
+        border: 2px solid var(--border-button);
 
         transition: background-color var(--transition-standard);
 
         &::before {
             content: "";
-            background-color: var(--border-button, purple);
+            background-color: var(--border-button);
             border-radius: 50%;
              
             width: 18px;
@@ -185,8 +185,8 @@ main {
             transition: var(--transition-standard);
         }
         &:checked {
-            background-color: var(--background-button-selected, purple);
-            border-color: var(--border-button-selected, purple);
+            background-color: var(--background-button-selected);
+            border-color: var(--border-button-selected);
             &::before {
                 background-color: var(--border-button-selected);
                 transform: translate(22px, -50%);
@@ -213,7 +213,7 @@ main {
         --visual-note-border: #A8693C;
 
         .sth-h1 {
-            background-color: var(--visual-background-wood, purple);
+            background-color: var(--visual-background-wood);
         }
     }
     label[for="dark"], .sync-dark {
@@ -256,18 +256,18 @@ main {
 
         .st-header {
             background-color: transparent;
-            background-image: var(--visual-vg-header, purple);
+            background-image: var(--visual-vg-header);
             .sth-h1 {
                 background-color: transparent;
-                background-image: var(--visual-vg-h1, purple);
-                border-color: var(--visual-vg-h1-border, purple);
+                background-image: var(--visual-vg-h1);
+                border-color: var(--visual-vg-h1-border);
             }
         }
         .st-aside {
-            background-color: var(--visual-vg-aside, purple);
+            background-color: var(--visual-vg-aside);
         }
         .st-footer {
-            background-color: var(--visual-vg-footer, purple);
+            background-color: var(--visual-vg-footer);
             border-left: none;
             border-bottom: none;
             border-right: none;

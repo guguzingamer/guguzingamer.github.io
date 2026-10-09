@@ -3,9 +3,9 @@
     flex-direction: column;
     align-items: center;
 
-    background-color: var(--background-standard, purple);
+    background-color: var(--background-standard);
 
-    border-right: 4px solid var(--border-wood, purple);
+    border-right: 4px solid var(--border-wood);
 }
 
 #header-main nav {
@@ -22,8 +22,8 @@
         width: 100%;
 
         .currentnavbutton {
-            border-color: var(--border-nav-button-selected, purple);
-            background-color: var(--background-nav-button-selected, purple);
+            border-color: var(--border-nav-button-selected);
+            background-color: var(--background-nav-button-selected);
         }
 
         a {
@@ -33,16 +33,16 @@
 
             align-items: center;
 
-            color: var(--text-colored, purple);
+            color: var(--text-colored);
             text-decoration: none;
-            background-color: var(--background-nav-button, purple);
+            background-color: var(--background-nav-button);
             border-radius: 5px;
-            border: 2px solid var(--border-nav-button, purple);
+            border: 2px solid var(--border-nav-button);
             border-bottom-width: 4px;
             transition: transform var(--transition-standard);
 
             span {
-                color: var(--text-neutral, purple);
+                color: var(--text-neutral);
                 font-size: 17px;
                 transition: var(--transition-standard);
             }
@@ -51,7 +51,7 @@
                 transform: translateX(7px);
 
                 span {
-                    color: var(--text-colored, purple);
+                    color: var(--text-colored);
                 }
             }
 
@@ -85,7 +85,7 @@
     
     border-left: 0;
     
-    color: var(--text-neutral, purple);
+    color: var(--text-neutral);
 
     span {
         transform: scaleX(-1);
@@ -95,7 +95,7 @@
     &:hover {
         cursor: pointer;
         span {
-            color: var(--text-colored, purple);
+            color: var(--text-colored);
         }
     }
     &:active span {
@@ -105,21 +105,21 @@
 
 .note {
     background: radial-gradient(circle at center,
-        var(--background-note, purple) 70%,
-        var(--background-note-darker, purple) 95%,
+        var(--background-note) 70%,
+        var(--background-note-darker) 95%,
         rgba(0,0,0,1) 110%);
 
-    color: var(--text-note, purple);
+    color: var(--text-note);
     margin: auto 0 12px 0;
 
     min-height: 140px;
     max-height: 140px;
     width: 180px;
 
-    border: 4px solid var(--border-wood, purple);
+    border: 4px solid var(--border-wood);
     border-radius: 7px;
 
-    outline: 2px dashed var(--outline-note, purple);
+    outline: 2px dashed var(--outline-note);
     outline-offset: -9px;
 
     display: flex;
@@ -138,7 +138,7 @@
 
     hr {
         border: none;
-        border-top: 2px dashed var(--outline-note, purple);
+        border-top: 2px dashed var(--outline-note);
         width: 95%;
     }
 
@@ -148,7 +148,7 @@
 
     &::before {
         content: "";
-        background-color: var(--background-note-tape, purple);
+        background-color: var(--background-note-tape);
         height: 20px;
         width: 30px;
         border-radius: 2px;
@@ -182,10 +182,10 @@
     line-height: 40px;
 
     margin: 10px 0 6px 0;
-    border: 5px solid var(--border-wood, purple);
+    border: 5px solid var(--border-wood);
     border-radius: 10px;
 
-    background-color: var(--background-standard, purple);
+    background-color: var(--background-standard);
 
     text-shadow: 3px 3px 4px rgba(0, 0, 0, .45);
 

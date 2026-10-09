@@ -43,8 +43,8 @@ main {
         button {
             padding: 10px;
             margin-left: auto;
-            background-color: var(--background-button-selected, purple);
-            border-color: var(--border-button-selected, purple);
+            background-color: var(--background-button-selected);
+            border-color: var(--border-button-selected);
             display: flex;
             align-items: center;
             gap: 5px;
@@ -88,7 +88,7 @@ main #sub {
         }
 
 
-        border: 2px solid var(--border-wood, purple);
+        border: 2px solid var(--border-wood);
         width: 180px;
         padding: 5px;
         border-radius: 5px;
@@ -107,7 +107,7 @@ main #sub {
                 counter-increment: item;
                 width: 100%;
                 a {
-                    color: var(--text-neutral, purple);
+                    color: var(--text-neutral);
                     text-decoration: none;
                     display: block;
                     width: 100%;
@@ -118,8 +118,8 @@ main #sub {
                     }
                     &:hover {
                         transition: var(--transition-standard);
-                        background-color: var(--background-highlight, purple);
-                        color: var(--text-colored, purple);
+                        background-color: var(--background-highlight);
+                        color: var(--text-colored);
                     }
                 }
             }
@@ -156,10 +156,10 @@ main #sub {
 
             li {
                 display: inline-block;
-                background-color: var(--background-button, purple);
+                background-color: var(--background-button);
                 
                 padding: 2px;
-                border: 2px solid var(--border-button, purple);
+                border: 2px solid var(--border-button);
                 border-radius: 5px;
                 margin: 0;
                 line-height: 100%;
@@ -167,8 +167,8 @@ main #sub {
             }
 
             .type {
-                border-color: var(--border-button-selected, purple) !important;
-                background-color: var(--background-button-selected, purple) !important;
+                border-color: var(--border-button-selected) !important;
+                background-color: var(--background-button-selected) !important;
             }
         }
     }

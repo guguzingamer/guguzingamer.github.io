@@ -65,6 +65,6 @@
     /* ---------- ADAPTATIONS ---------- */
 
     .sign {
-        background-color: var(--background-wood, purple);
+        background-color: var(--background-wood);
     }
 }

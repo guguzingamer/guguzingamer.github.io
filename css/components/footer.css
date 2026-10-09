@@ -2,7 +2,7 @@ footer {
     display: flex;
     align-items: center;
     
-    color: var(--text-neutral, purple);
+    color: var(--text-neutral);
 
     > * {
         margin-left: 20px;
@@ -26,7 +26,7 @@ footer {
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            background-color: var(--background-group, purple);
+            background-color: var(--background-group);
             border-radius: 50%;
             position: relative;
 
@@ -48,7 +48,7 @@ footer {
             }
 
             &:hover {
-                background-color: var(--social, purple);
+                background-color: var(--social);
                 &::before {
                     transform: scale(1);
                 }
@@ -62,7 +62,7 @@ footer {
             text-align: center;
             text-anchor: end;
             font-size: 15px;
-            color: var(--border-button-selected, purple);
+            color: var(--border-button-selected);
             transition: color var(--transition-standard);
         }
     }

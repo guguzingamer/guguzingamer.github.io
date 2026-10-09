@@ -93,7 +93,7 @@ main {
 
 footer {
     height: auto;
-    min-height: max(54px, 8dvh);
+    min-height: 8dvh;
     z-index: 4;
     grid-area: footer;
 }

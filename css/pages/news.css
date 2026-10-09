@@ -60,7 +60,7 @@ only screen and (max-width: 600px) {
                 margin-top: 20px;
             }
             .featured-text {
-                color: var(--text-colored, purple);
+                color: var(--text-colored);
                 font-weight: bold;
                 font-style: italic;
             }
@@ -88,7 +88,7 @@ only screen and (max-width: 600px) {
     a {
         text-decoration: none;
         display: grid;
-        color: var(--text-neutral, purple);
+        color: var(--text-neutral);
 
         height: 270px;
         grid-template-rows: 138px 30px 62px 20px;
@@ -110,12 +110,12 @@ only screen and (max-width: 600px) {
             width: 100%;
             height: 100%;
 
-            border-bottom: 3px solid var(--border-button, purple);
+            border-bottom: 3px solid var(--border-button);
         }
         .name {
             align-self: center;
             grid-area: name;
-            color: var(--text-colored, purple);
+            color: var(--text-colored);
             width: 200px;
 
             overflow: hidden;

@@ -65,7 +65,7 @@
     /* ---------- ADAPTATIONS ---------- */
 
     .note {
-        border-color: var(--border-note, purple);
+        border-color: var(--border-note);
     }
     header a:hover{
         font-weight: bold;
