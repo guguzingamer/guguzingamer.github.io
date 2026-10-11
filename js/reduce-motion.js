@@ -17,7 +17,9 @@ function applyMotion() {
     document.documentElement.setAttribute("data-reduce-motion", state)
 }
 
-applyMotion()
-window.addEventListener("reduce-motionChanged", () => {
+export function init() {
     applyMotion()
-})
+    window.addEventListener("reduce-motionChanged", () => {
+        applyMotion()
+    })
+}

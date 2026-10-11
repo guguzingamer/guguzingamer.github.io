@@ -5,9 +5,9 @@ aside {
 
     z-index: 3;
 
-    background-color: var(--background-standard);
+    background-color: var(--background-standard, transparent);
 
-    border-left: 4px solid var(--border-wood);
+    border-left: 4px solid var(--border-wood, transparent);
 
     h2 {
         margin-top: 10px;
@@ -30,7 +30,7 @@ aside {
     a {
         text-decoration: none;
         display: grid;
-        color: var(--text-neutral);
+        color: var(--text-neutral, transparent);
 
         padding: 0 !important;
         height: 235px;
@@ -57,12 +57,12 @@ aside {
             width: 100%;
             height: 100%;
 
-            border-bottom: 3px solid var(--border-button);
+            border-bottom: 3px solid var(--border-button, transparent);
         }
         .name {
             align-self: center;
             grid-area: name;
-            color: var(--text-colored);
+            color: var(--text-colored, transparent);
             width: 165px;
 
             overflow: hidden;
@@ -104,12 +104,12 @@ aside {
 
         margin-bottom: 20px;
 
-        border: 3px solid var(--border-button-selected);
+        border: 3px solid var(--border-button-selected, transparent);
         
         border-radius: 10px;
-        background-color: var(--background-button-selected);
+        background-color: var(--background-button-selected, transparent);
 
-        color: var(--text-neutral);
+        color: var(--text-neutral, transparent);
         text-decoration: none;
 
         overflow: hidden;
@@ -146,7 +146,7 @@ aside {
 
     margin: 0;
 
-    color: var(--text-neutral);
+    color: var(--text-neutral, transparent);
 
     span {
         transition: color var(--transition-standard), transform var(--transition-standard);
@@ -155,7 +155,7 @@ aside {
     &:hover {
         cursor: pointer;
         span {
-            color: var(--text-colored);
+            color: var(--text-colored, transparent);
         }
     }
     &:active span {

@@ -1,5 +1,3 @@
-const hoverSound = new Audio("/assets/sounds/hover.mp3")
-
 function random(min, max) {
     var result = Math.random() * (max - min) + min;
     return result
@@ -27,8 +25,10 @@ function storeSound(enabled) {
     localStorage.setItem("sound", enabled);
 }
 
-getSound()
-componentsReady.then(() => {
+export function init() {
+    const hoverSound = new Audio("/assets/sounds/hover.mp3")
+
+    getSound()
     const elements = document.querySelectorAll(".hover")
     
     elements.forEach(element => {
@@ -36,4 +36,4 @@ componentsReady.then(() => {
             playSound(hoverSound)
         })
     })
-})
+}

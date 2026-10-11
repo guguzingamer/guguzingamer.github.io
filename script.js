@@ -1,4 +1,6 @@
-var scripts = [
+// Config here!
+
+var scriptsToLoad = [
 	"theme.js",
 	"components.js",
     "fetch-news.js",
@@ -14,61 +16,59 @@ var scripts = [
     "test.js"
 ];
 
-customScripts = document.querySelectorAll("custom-script")
-console.log(customScripts)
+const debugMode = true
+
+// Gets the custom elements
+
+const customScripts = document.querySelectorAll("custom-script") 
 
 customScripts.forEach(el => {
     const source = el.getAttribute("src")
     const nSource = source.replace("/js/", "")
 
-    scripts.splice(3, 0, nSource)
+    scriptsToLoad.splice(3, 0, nSource)
 })
 
-
-// Loading Bar - start
+// ----- Loading Bar -----
 
 const loadingBar = document.createElement("progress")
-loadingBar.max = scripts.length
+loadingBar.max = scriptsToLoad.length
 loadingBar.value = 0
 loadingBar.classList.add("loading-bar")
 
 document.body.append(loadingBar)
 
-let loadedScripts = 0;
+let loadedScripts = 0
 
-// Loading Bar - end
+function finishLoading() {
+	loadingBar.classList.add("is-complete");
+	console.log("All scripts loaded!")
+}
 
-const scriptsReady = new Promise(resolve => {
-    window.finishScripts = () => {
-        loadingBar.classList.add("is-complete");
-        console.log("All scripts loaded!")
-        resolve();
-    };
-});
+async function loadScript(path) {
+	const archive = await import(path)
+	
+	if (typeof archive.init === "function") {
+		await archive.init()
+		
+		if (debugMode) {
+			console.log(path + " loaded!")
+		}
 
-function loadScripts(src) {
-    const script = document.createElement("script");
+		loadedScripts++
+		// console.log(loadedScripts)
+		
+		loadingBar.value = loadedScripts
+		if (loadedScripts == scriptsToLoad.length) {
+			finishLoading()
+		}
+	}
+}
 
-    script.src = src;
-    script.async = false;
+async function loadAllScripts() {
+	for (const src of scriptsToLoad) {
+		await loadScript("/js/" + src)
+	}
+}
 
-    script.onload = () => {
-        loadedScripts++;
-        loadingBar.value = loadedScripts
-
-        if (loadedScripts === scripts.length) {
-            finishScripts();
-        }
-    };
-
-    script.onerror = () => {
-        console.error(`Failed to load: ${src}`);
-    };
-
-    // console.log(`Script ${src} finished loading! Number: ${loadedScripts}`)
-    document.head.appendChild(script);
-};
-
-scripts.forEach(archive => {
-    loadScripts("/js/"+archive)
-});
+loadAllScripts()

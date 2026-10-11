@@ -73,7 +73,7 @@
     /* ---------- ADAPTATIONS ---------- */
 
     body {
-        background-image: var(--background-standard);
+        background-image: var(--background-standard, transparent);
 
         .group {
             border-radius: 5px;
@@ -82,15 +82,15 @@
         }
 
         #wrapper-header-main .board, #wrapper-aside .board {
-            span {color: var(--text-bright) !important;}
+            span {color: var(--text-bright, transparent) !important;}
             &:hover span {
-                color: var(--text-high-contrast) !important;
+                color: var(--text-high-contrast, transparent) !important;
             }
         }
 
         .board {
-            border-color: var(--border-wood);
-            color: var(--text-bright);
+            border-color: var(--border-wood, transparent);
+            color: var(--text-bright, transparent);
         }
 
         footer {
@@ -98,25 +98,25 @@
             border-right: none;
             border-left: none;
             border-bottom: none;
-            background-color: var(--background-footer);
+            background-color: var(--background-footer, transparent);
             border-top-width: 3px;
         }
 
         #header-sub {
             ul li {
-                color: var(--text-bright) !important;
+                color: var(--text-bright, transparent) !important;
                 
                 span {
-                    color: var(--text-bright) !important;
+                    color: var(--text-bright, transparent) !important;
                 }
 
                 button {
                     &:hover ~ span {
-                        color: var(--text-high-contrast) !important;
+                        color: var(--text-high-contrast, transparent) !important;
                     }
                     &:hover {
                         span {
-                            color: var(--text-high-contrast) !important;
+                            color: var(--text-high-contrast, transparent) !important;
                         }
                     }
                 }
@@ -124,21 +124,21 @@
         }
 
         #header-main {
-            background: var(--background-header);
+            background: var(--background-header, transparent);
 
             .sign {
-                background: var(--background-sign);
-                color: var(--text-bright);
+                background: var(--background-sign, transparent);
+                color: var(--text-bright, transparent);
 
                 box-shadow:
                     0 5px 0 #2b1a12,
                     8px 12px rgba(0, 0, 0, 0.35);
 
-                border-color: var(--border-sign);
+                border-color: var(--border-sign, transparent);
             }
 
             .note {
-                color: var(--text-bright);
+                color: var(--text-bright, transparent);
                 outline-style: solid;
                 
                 h2 {
@@ -150,21 +150,21 @@
 
             nav ul a {
                 &:hover {
-                    background-color: var(--background-nav-button-hover);
+                    background-color: var(--background-nav-button-hover, transparent);
                 }
             }
             .currentnavbutton {
                 &:hover {
-                    background-color: var(--background-nav-button);
+                    background-color: var(--background-nav-button, transparent);
                 }
             }
 
             nav span {
-                color: var(--text-bright);
+                color: var(--text-bright, transparent);
             }
         }
         #aside {
-            background-color: var(--background-aside);
+            background-color: var(--background-aside, transparent);
         }
     }
 }

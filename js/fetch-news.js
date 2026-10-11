@@ -66,11 +66,11 @@ async function loadArticleToAside(src, asideUl) {
     newLi.append(newA)
 }
 
-componentsReady.then(async () => {
+export async function init() {
     const asideUl = document.querySelector("aside ul")
     const latestNews = await getLatestArticles()
 
     for (const article of latestNews) {
         await loadArticleToAside("/pages/news/" + article, asideUl);
     }
-});
+}

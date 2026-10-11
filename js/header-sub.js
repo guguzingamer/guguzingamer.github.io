@@ -1,5 +1,7 @@
-const headerMain = document.getElementById("wrapper-header-main");
-const aside = document.getElementById("wrapper-aside");
+export function init() {
+    const headerMain = document.getElementById("wrapper-header-main");
+    const aside = document.getElementById("wrapper-aside");
+}
 
 function activeHeaderSub(id) {
     const element = document.getElementById(id);

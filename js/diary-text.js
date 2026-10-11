@@ -25,6 +25,6 @@ function setTodaysText() {
     document.getElementById("diaryText").textContent = text;
 }
 
-componentsReady.then(() => {
+export function init() {
     setTodaysText();
-});
+}

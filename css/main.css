@@ -8,16 +8,16 @@ main {
 
     h2 {
         font-size: 27px;
-        color: var(--text-colored);
+        color: var(--text-colored, transparent);
     }
 
     h3, h4 {
-        color: var(--text-colored);
+        color: var(--text-colored, transparent);
     }
 
     hr {
         border: none;
-        border-bottom: 2px dashed var(--border-hr);
+        border-bottom: 2px dashed var(--border-hr, transparent);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -25,13 +25,13 @@ main {
         &::after {
             content: "♥";
             font-size: 40px;
-            color: var(--border-hr);
+            color: var(--border-hr, transparent);
 
             text-shadow:
-                3px 3px 0 var(--background-group),
-                -3px 3px 0 var(--background-group),
-                3px -3px 0 var(--background-group),
-                -3px -3px 0 var(--background-group);
+                3px 3px 0 var(--background-group, transparent),
+                -3px 3px 0 var(--background-group, transparent),
+                3px -3px 0 var(--background-group, transparent),
+                -3px -3px 0 var(--background-group, transparent);
 
             position: absolute;
         }
@@ -56,7 +56,7 @@ main {
                 position: absolute;
                 width: 10px;
                 height: 14px;
-                background-color: var(--text-colored);
+                background-color: var(--text-colored, transparent);
                 border-radius: 50%;
                 left: -20px;
             }
@@ -66,7 +66,7 @@ main {
                 position: absolute;
                 width: 2px;
                 height: 10px;
-                border-left: 1.5px solid var(--background-group);
+                border-left: 1.5px solid var(--background-group, transparent);
                 border-radius: 50%;
                 left: -16px;
                 transform: rotate(10deg);
@@ -75,8 +75,8 @@ main {
     }
 
     .highlight {
-        background-color: var(--background-highlight);
-        border: 2px solid var(--border-highlight);
+        background-color: var(--background-highlight, transparent);
+        border: 2px solid var(--border-highlight, transparent);
         border-radius: 3px;
 
         padding: 15px 0 15px 0;
@@ -87,10 +87,10 @@ main {
     }
 
     .button {
-        border: 3px solid var(--border-button);
+        border: 3px solid var(--border-button, transparent);
         
         border-radius: 10px;
-        background-color: var(--background-button);
+        background-color: var(--background-button, transparent);
 
         overflow: hidden;
 

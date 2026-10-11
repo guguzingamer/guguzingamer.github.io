@@ -5,8 +5,6 @@ function createPText(id, el) {
     return returned
 }
 
-const sections = document.querySelectorAll("section")
-
 async function createProjectA(src, sectionUl) {
     const response = await fetch(src);
 
@@ -33,7 +31,6 @@ async function createProjectA(src, sectionUl) {
         nIcon.alt = "icon"
 
     const nName = createPText("name", name)
-    nName.title = nName.textContent
 
     const nSummary = createPText("summary", summary)
     const nVersion = createPText("version", version)
@@ -53,21 +50,26 @@ async function createProjectA(src, sectionUl) {
 
     sectionUl.append(newLi)
     newLi.append(nA)
-
-    nA.addEventListener("mouseenter", () => {
-        playSound(hoverSound);
-    });
 }
 
-const projectsList = fetch("/data/projects.json")
-    .then(response => response.json())
-    .then(async data => {
-        for (const category in data.projects_list) {
-            const section = document.querySelector(`#${category}`);
-            const sectionUl = section.querySelector("ul");
+export async function init() {
+    const sections = document.querySelectorAll("section")
 
-            for (const projectName of data.projects_list[category]) {
-                await createProjectA(`/pages/projects/${projectName}.html`, sectionUl);
-            }
+    const projectsList = await fetch("/data/projects.json")
+
+    if (!projectsList) {
+        console.warn("Data projects.json could not be loaded!")
+        return
+    }
+
+    const json = await projectsList.json()
+
+    for (const category in json.projects_list) {
+        const section = document.querySelector(`#${category}`);
+        const sectionUl = section.querySelector("ul");
+
+        for (const projectName of json.projects_list[category]) {
+            await createProjectA(`/pages/projects/${projectName}.html`, sectionUl);
         }
-    })
+    }
+}

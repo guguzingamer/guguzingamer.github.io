@@ -67,10 +67,12 @@ function checkInputs(section) {
 }
 
 // This controls each function
-const settingsSections = document.querySelectorAll("section");
-scriptsReady.then(() => {
+
+export function init() {
+    const settingsSections = document.querySelectorAll("section");
+
     settingsSections.forEach(element => {
         addListener(element)
         checkInputs(element)
     });
-})
+}

@@ -1,17 +1,31 @@
-const script = document.currentScript;
-const base = new URL("../", script.src);
+async function loadAllComponents(list) {
+    await Promise.all(
+        list.map(async item => {
+            const path = ("/components/"+item+".html")
+            const mPath = path.replace("wrapper-", "")
 
-function loadComponent(id, file) {
-    return fetch(new URL(file, base))
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById(id).innerHTML = html;
-        });
+            const response = await fetch(mPath)
+
+            if (!response.ok) {
+                console.warn("Component " + item + "could not be loaded!")
+                return
+            }
+
+            const html = await response.text();
+
+            const target = document.querySelector("#"+item)
+            target.innerHTML = html
+        })
+    )
 }
 
-window.componentsReady = Promise.all([
-    loadComponent("wrapper-header-main", "/components/header-main.html"),
-    loadComponent("header-sub", "/components/header-sub.html"),
-    loadComponent("wrapper-aside", "/components/aside.html"),
-    loadComponent("footer", "/components/footer.html")
-]);
+export async function init() {
+    const componentsList = [
+        "wrapper-aside",
+        "footer",
+        "wrapper-header-main",
+        "header-sub"
+    ]
+
+    await loadAllComponents(componentsList)
+}

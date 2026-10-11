@@ -43,8 +43,8 @@ main {
         button {
             padding: 10px;
             margin-left: auto;
-            background-color: var(--background-button-selected);
-            border-color: var(--border-button-selected);
+            background-color: var(--background-button-selected, transparent);
+            border-color: var(--border-button-selected, transparent);
             display: flex;
             align-items: center;
             gap: 5px;
@@ -88,7 +88,7 @@ main #sub {
         }
 
 
-        border: 2px solid var(--border-wood);
+        border: 2px solid var(--border-wood, transparent);
         width: 180px;
         padding: 5px;
         border-radius: 5px;
@@ -107,7 +107,7 @@ main #sub {
                 counter-increment: item;
                 width: 100%;
                 a {
-                    color: var(--text-neutral);
+                    color: var(--text-neutral, transparent);
                     text-decoration: none;
                     display: block;
                     width: 100%;
@@ -118,8 +118,8 @@ main #sub {
                     }
                     &:hover {
                         transition: var(--transition-standard);
-                        background-color: var(--background-highlight);
-                        color: var(--text-colored);
+                        background-color: var(--background-highlight, transparent);
+                        color: var(--text-colored, transparent);
                     }
                 }
             }
@@ -156,10 +156,10 @@ main #sub {
 
             li {
                 display: inline-block;
-                background-color: var(--background-button);
+                background-color: var(--background-button, transparent);
                 
                 padding: 2px;
-                border: 2px solid var(--border-button);
+                border: 2px solid var(--border-button, transparent);
                 border-radius: 5px;
                 margin: 0;
                 line-height: 100%;
@@ -167,8 +167,8 @@ main #sub {
             }
 
             .type {
-                border-color: var(--border-button-selected) !important;
-                background-color: var(--background-button-selected) !important;
+                border-color: var(--border-button-selected, transparent) !important;
+                background-color: var(--background-button-selected, transparent) !important;
             }
         }
     }

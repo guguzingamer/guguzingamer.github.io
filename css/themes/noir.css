@@ -65,7 +65,7 @@
     /* ---------- ADAPTATIONS ---------- */
 
     .note {
-        border-color: var(--border-note);
+        border-color: var(--border-note, transparent);
     }
     header a:hover{
         font-weight: bold;

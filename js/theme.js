@@ -1,5 +1,3 @@
-const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
-
 // Get theme
 
 function getTheme() {
@@ -14,18 +12,18 @@ function getTheme() {
 
 const syncOpt = document.querySelector("label[for='sync']")
 
-function applyTheme() {
+function applyTheme(sysTheme) {
     const preference = getTheme();
 
     const theme = preference === "sync"
-        ? (systemTheme.matches ? "dark" : "light")
+        ? (sysTheme.matches ? "dark" : "light")
         : preference;
 
     document.documentElement.dataset.theme = theme;
 
     if (syncOpt) {
         syncOpt.classList.remove("sync-dark", "sync-light")
-        syncOpt.classList.add("sync-" + (systemTheme.matches ? "dark" : "light"))
+        syncOpt.classList.add("sync-" + (sysTheme.matches ? "dark" : "light"))
     }
 }
 
@@ -33,7 +31,7 @@ function applyTheme() {
 
 function storeTheme(theme) {
     localStorage.setItem("theme", theme);
-    applyTheme();
+    applyTheme(systemTheme);
 }
 
 // Checked radio
@@ -47,15 +45,20 @@ function checkForRadio() {
     }
 }
 
-systemTheme.addEventListener("change", () => {
-    if (getTheme() === "sync") {
-        applyTheme();
-    }
-})
+export function init() {
 
-window.addEventListener("themeChanged", (value) => {
-    applyTheme()
-})
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-applyTheme();
-checkForRadio();
+    systemTheme.addEventListener("change", () => {
+        if (getTheme() === "sync") {
+            applyTheme(systemTheme);
+        }
+    })
+
+    window.addEventListener("themeChanged", (value) => {
+        applyTheme(systemTheme)
+    })
+
+    applyTheme(systemTheme);
+    checkForRadio();
+}

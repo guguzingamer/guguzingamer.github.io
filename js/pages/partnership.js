@@ -1,9 +1,12 @@
-const numb = document.getElementById("number");
-const ulLi = document.querySelectorAll(".li");
+export function init() {
 
-var count = 0
-ulLi.forEach(li => {
-    count += 1
-});
+    const numb = document.getElementById("number");
+    const ulLi = document.querySelectorAll(".li");
 
-numb.innerHTML = count;
+    var count = 0
+    ulLi.forEach(li => {
+        count += 1
+    });
+
+    numb.innerHTML = count;
+}

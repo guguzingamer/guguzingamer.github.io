@@ -50,7 +50,6 @@ async function loadNewsPage(src, newsContainer) {
         newImg.alt = "banner"
 
     const newH3 = createNewsText("h3", "name", name)
-    newH3.title = newH3.textContent
 
     const newP = createNewsText("p", "summary", summary)
     const newSmall = createNewsText("small", "date", date)
@@ -66,31 +65,33 @@ async function loadNewsPage(src, newsContainer) {
     newsContainer.append(newLi)
     newLi.append(newA)
 
-    newA.addEventListener("mouseenter", () => {
-        playSound(hoverSound);
-    });
-
     return newLi
 }
 
-const newsContainer = document.querySelector("#news-container")
+export async function init() {
+    const newsContainer = document.querySelector("#news-container")
 
-const newsList = fetch("/data/news.json")
-    .then(response  => response.json())
-    .then(async list => {
-        for (const article of list.news_list) {
-            if (first == null) {
-                var first = true
-            }
+    const newsList = await fetch("/data/news.json")
 
-            if (first == true) {
-                const featured = await loadNewsPage(`/pages/news/${article}.html`, newsContainer)
-                adaptFeatured(featured)
-            }
-            else {
-                await loadNewsPage(`/pages/news/${article}.html`, newsContainer);
-            }
+    if (!newsList) {
+        console.warn("Data news.json could not be loaded!")
+        return
+    }
 
-            first = false
+    const json = await newsList.json()
+
+    for (const article of json.news_list) {
+        if (first == null) {
+            var first = true
         }
-    })
+
+        if (first == true) {
+            const featured = await loadNewsPage(`/pages/news/${article}.html`, newsContainer)
+            adaptFeatured(featured)
+        }
+
+        else {
+            await loadNewsPage(`/pages/news/${article}.html`, newsContainer);
+        }
+    }
+}

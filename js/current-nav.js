@@ -23,6 +23,6 @@ function setCurrentNavButton() {
     }
 }
 
-componentsReady.then(() => {
+export function init() {
     setCurrentNavButton();
-});
+}
