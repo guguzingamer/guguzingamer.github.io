@@ -1,28 +1,34 @@
 export function init() {
-    const headerMain = document.getElementById("wrapper-header-main");
-    const aside = document.getElementById("wrapper-aside");
-}
+    const sidebars = {
+        "wrapper-header-main": document.getElementById("wrapper-header-main"),
+        "wrapper-aside": document.getElementById("wrapper-aside")
+    }
 
-function activeHeaderSub(id) {
-    const element = document.getElementById(id);
+    async function closeAll() {
+        sidebars["wrapper-header-main"].classList.remove("active")
+        sidebars["wrapper-aside"].classList.remove("active")
+    }
 
-    if (!element) {return};
+    // Header Sub
 
-    if (headerMain.classList.contains('active', true)) {
-        headerMain.classList.toggle('active', false);
-    };
+    const activateButtons = document.querySelectorAll(".sidebar-active")
 
-    if (aside.classList.contains('active', true)) {
-        aside.classList.toggle('active', false);
-    };
+    activateButtons.forEach(el => {
+        el.addEventListener("click", async () => {
+            await closeAll()
 
-    element.classList.toggle('active', true);
-}
+            const type = el.getAttribute("data-sidebar-target")
+            sidebars[type].classList.add("active")
+        })
+    })
 
-function closeHeaderSub(id) {
-    const element = document.getElementById(id);
+    // Wrappers
 
-    if (!element) {return};
+    const closeButtons = document.querySelectorAll(".sidebar-close")
 
-    element.classList.toggle('active', false)
+    closeButtons.forEach(el => {
+        el.addEventListener("click", () => {
+            closeAll()
+        })
+    })
 }
