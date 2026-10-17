@@ -50,6 +50,7 @@ async function loadNewsPage(src, newsContainer) {
         newImg.alt = "banner"
 
     const newH3 = createNewsText("h3", "name", name)
+    newH3.title = newH3.textContent
 
     const newP = createNewsText("p", "summary", summary)
     const newSmall = createNewsText("small", "date", date)

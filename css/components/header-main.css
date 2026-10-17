@@ -21,7 +21,7 @@
         
         width: 100%;
 
-        .currentnavbutton {
+        .current-nav-button {
             border-color: var(--border-nav-button-selected, transparent);
             background-color: var(--background-nav-button-selected, transparent);
         }

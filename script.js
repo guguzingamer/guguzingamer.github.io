@@ -1,4 +1,4 @@
-// Config here!
+// ----- Config here! -----
 
 var scriptsToLoad = [
 	"theme.js",
@@ -8,6 +8,7 @@ var scriptsToLoad = [
     "fa.js",
 	"diary-text.js",
 	"header-sub.js",
+	"dev-mode.js",
 	"current-nav.js",
 	"sounds.js",
 	"reduce-motion.js",
@@ -18,7 +19,7 @@ var scriptsToLoad = [
 
 const debugMode = true
 
-// Gets the custom elements
+// ----- Add the custom elements to scriptsToLoad -----
 
 const customScripts = document.querySelectorAll("custom-script") 
 
@@ -29,7 +30,7 @@ customScripts.forEach(el => {
     scriptsToLoad.splice(3, 0, nSource)
 })
 
-// ----- Loading Bar -----
+// ----- Loading bar -----
 
 const loadingBar = document.createElement("progress")
 loadingBar.max = scriptsToLoad.length
@@ -40,10 +41,15 @@ document.body.append(loadingBar)
 
 let loadedScripts = 0
 
+// ----- Finish function & page loading -----
+
 function finishLoading() {
 	loadingBar.classList.add("is-complete");
+	document.documentElement.classList.remove("html-loading")
 	console.log("All scripts loaded!")
 }
+
+// ----- Loading scripts main logic -----
 
 async function loadScript(path) {
 	const archive = await import(path)
@@ -63,6 +69,9 @@ async function loadScript(path) {
 			finishLoading()
 		}
 	}
+	else {
+		console.warn(path+" does not have a init function!")
+	}
 }
 
 async function loadAllScripts() {
@@ -70,5 +79,6 @@ async function loadAllScripts() {
 		await loadScript("/js/" + src)
 	}
 }
+
 
 loadAllScripts()

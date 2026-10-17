@@ -31,6 +31,7 @@ async function createProjectA(src, sectionUl) {
         nIcon.alt = "icon"
 
     const nName = createPText("name", name)
+    nName.title = nName.textContent
 
     const nSummary = createPText("summary", summary)
     const nVersion = createPText("version", version)
